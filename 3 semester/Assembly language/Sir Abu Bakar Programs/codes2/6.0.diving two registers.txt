@@ -1,0 +1,19 @@
+include Irvine32.inc
+
+.code
+
+main Proc
+
+mov eax, 10
+mov ebx, 5
+
+mov edx, 0 ; initialize overflow register with 0
+
+div ebx ; eax=eax/ebx = 10/5 = 2 = 2h;
+
+call DumpRegs
+exit
+
+main endP
+
+end

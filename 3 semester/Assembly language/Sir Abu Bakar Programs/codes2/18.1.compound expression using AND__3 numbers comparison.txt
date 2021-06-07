@@ -1,0 +1,70 @@
+;compound expression using AND operator
+;following C language statement is coverted into assembly
+
+comment ?	
+if(eax>ebx)
+{
+	if(eax>ecx)
+	{
+		eax is greatest number
+	}
+	else
+		ecx is greatest number
+}
+else
+{
+	if (ebx>ecx)
+	{
+		ebx is greatest number
+	}
+	else
+		ecx is greatest number
+}
+?comment
+
+
+include irvine32.inc
+
+.data
+strA byte "EAX is greatest number",0ah,0
+strB byte "EBX is greatest number",0ah,0
+strC byte "ECX is greatest number",0ah,0
+
+.code
+main Proc
+	mov eax, 20
+	mov ebx, 10
+	mov ecx, 5
+
+	cmp eax, ebx
+	JA lable_AGB
+	JB lable_ALB
+
+	lable_AGB:
+		cmp eax, ecx
+		JA lableAGBC
+		JB lableCGAB
+
+	lableAGBC:
+		lea edx, strA
+		call writestring
+		exit
+
+	lable_ALB:
+		cmp ebx, ecx
+		JA lableBGAC
+		JB lableCGAB
+		exit
+
+	lableBGAC:
+		lea edx, strB
+		call writestring
+		exit
+
+	lableCGAB:
+		lea edx, strC
+		call writestring
+			
+exit
+main endP
+end

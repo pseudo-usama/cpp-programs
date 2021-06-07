@@ -1,0 +1,13 @@
+;Overflow Flag (OF)
+;when executing instruction produces invalide signed result then OF=1 otherwise OF=0
+
+include irvine32.inc
+
+.code
+main Proc
+
+
+
+exit
+main endP
+end

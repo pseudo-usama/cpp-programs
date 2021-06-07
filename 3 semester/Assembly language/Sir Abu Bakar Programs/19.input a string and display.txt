@@ -1,0 +1,22 @@
+;(1) geting input string from user and then display
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::::::::::::::::
+
+include Irvine32.inc
+
+.data
+
+	MAX = 10                     ;max chars to read and save this value into ECX(counter register)
+	stringIn BYTE MAX+1 DUP (?)  ;room for null
+
+.code
+main PROC
+
+	  mov  edx,OFFSET stringIn
+      mov  ecx,MAX            ;buffer size - 1, moving MAX into counter register
+      call ReadString		; input string
+	  call writestring		;displaying string
+
+exit
+
+main endP
+end

@@ -1,0 +1,23 @@
+;Auxiliary Flag (AF)
+;When a carry goes from lower half (3rd bit) of lowest BYTE (8 bits) to upper half (4th bit) of lowers BYTE, then AF =1 otherwise AF=0
+
+;lowest BYTE = 7,6,5,4,3,2,1,0
+
+include irvine32.inc
+
+.code
+main Proc
+
+call dumpregs	;dummy value of flags
+
+mov eax, 0	;initialize register by 0
+mov eax, 00001111b	;move data in only lowest byte by using BIT form
+
+call dumpregs	;check values of EAX, only lowest BYTE is changed
+
+add eax, 1	;add 1 into lowest byte so that carry produce
+call dumpregs	;carry out from lowest byte and move next byte	AF=1
+
+exit
+main endP
+end

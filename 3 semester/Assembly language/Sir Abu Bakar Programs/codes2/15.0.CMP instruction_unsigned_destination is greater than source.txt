@@ -1,0 +1,20 @@
+include irvine32.inc
+
+.code
+main Proc
+
+mov eax, 10
+mov ebx, 20
+
+call dumpregs
+
+cmp ebx, eax ;ZF=0 and CF=0
+
+call dumpregs	
+
+
+	
+		
+exit
+main endP
+end

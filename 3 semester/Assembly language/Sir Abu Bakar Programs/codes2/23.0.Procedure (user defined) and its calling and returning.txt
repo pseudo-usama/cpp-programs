@@ -1,0 +1,26 @@
+;user defined procedures
+
+;procedure name = myprocedure
+;RET is used to return value
+
+;user defined procedure should be defined within .code block either before or after main procedure.
+include irvine32.inc
+
+.code
+
+main Proc
+	mov eax, 0
+	call myprocedure
+	
+	call writedec		
+exit
+main endP
+
+myprocedure proc
+	.repeat
+		inc eax
+	.until eax==10
+	ret
+myprocedure endp
+
+end

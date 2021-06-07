@@ -1,0 +1,37 @@
+;(1) moving data of variable into register according to its size
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+include Irvine32.inc
+
+.data
+
+	;16 bit variable
+	var_16_us word 1
+	var_16_s sword 2
+	var_16 dw 3
+
+.code
+
+main proc
+	
+	;movig 16 bit variabl into 16 bit register having its own value in upper 16 bits
+	mov ax, var_16_us  ;this is initializing of register by variable
+	mov bx, var_16_s ;this is initializing of register by variable
+	mov cx, var_16 ;this is initializing of register by variable
+
+	;movig 16 bit variabl into 16 bit register having 16-bit 0's in upper part
+	mov edx, 0 ;intialize 32 bit register with 0
+	mov dx, var_16_us
+	
+	mov edi, 0 ;intialize 32 bit register with 0
+	mov di, var_16_s
+	
+	mov esi, 0 ;intialize 32 bit register with 0
+	mov si, var_16
+	
+	call dumpregs
+exit
+main endP
+
+end

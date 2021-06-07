@@ -1,0 +1,18 @@
+include Irvine32.inc
+
+.code
+
+main Proc
+
+
+mov eax, 8
+mov ebx, 4
+
+sub eax, ebx
+
+call DumpRegs
+exit
+
+main endP
+
+end

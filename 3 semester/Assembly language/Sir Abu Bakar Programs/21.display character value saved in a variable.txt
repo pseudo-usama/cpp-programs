@@ -1,0 +1,20 @@
+include Irvine32.inc
+.data
+
+	charIn BYTE 1 DUP (?)  ;room for null
+.code
+
+main proc
+
+call readchar
+mov charIn, al
+
+call readchar ;only for confirmation
+
+mov al, charIn
+call writechar
+
+exit
+
+main endP
+end

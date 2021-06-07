@@ -1,0 +1,35 @@
+;(1) signed verse unsigned integers
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::::::::::::::::
+
+include Irvine32.inc
+
+.data
+	;32 bit variable
+	;both unsigned and signed numbers are equal when MSB is 0
+	var1 dword 32h ;unsigned double
+	var2 sdword 32h ;signed double
+
+	;both unsigned and signed numbers are not equal when MSB is 1
+	var3 dword 0ffffff32h ;unsigned double; 4294967090
+	var4 sdword 0ffffff32h ;signed double; -000000CEh = -206
+.code
+
+main proc
+	
+	mov eax, var1
+	add eax, 4 ;32h+4h=36h
+
+	mov ebx, var2
+	add ebx, 4
+	
+	mov ecx, var3 ;ecx = 4294967090
+	add ecx, 4 ;ecx = 4294967090 + 4 = 4294967094 = ffffff36h
+
+	mov edx, var4 ;edx = -206
+	add edx, 4 ;edx = -206 + 4 = -202 = -000000CA = ffffff36h
+
+	call dumpregs
+exit
+main endP
+
+end

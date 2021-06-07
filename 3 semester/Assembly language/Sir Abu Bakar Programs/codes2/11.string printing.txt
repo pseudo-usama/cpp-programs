@@ -1,0 +1,27 @@
+;(1) printing a string on screen
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::::::::::::::::
+
+include Irvine32.inc
+
+.data
+	;data types which can be used for string are byte, sbyte and db
+	;0Ah is used to move pointer to next line and 0 is used for null. null mean string is ended
+	;0ah must be used before 0 otherwise string will be ended first and pointer will not be moved to next line
+
+	STRING_1  db  "Assolam-o-Allikum", 0ah, 0 
+	STRING_2  db  "how are you", 0ah, 0
+
+.code
+main PROC
+     
+	lea edx, string_1 ;load effective address into data register (edx)
+
+	;or following instruction can be used as alternative to above
+
+	;mov edx, offset string_1 ;offset send address of string into data register. the register display data on that address
+	
+call writestring
+exit
+
+main endP
+end

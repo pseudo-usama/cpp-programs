@@ -1,0 +1,20 @@
+;unconditional LOOP
+;simple LOOP
+;LOOP	: jump to specified lable according to value of ECX (ECX != 0)
+
+include irvine32.inc
+
+.data
+str1 byte "Welcome",0ah, 0
+.code
+
+main Proc
+	mov ecx, 10
+	
+	repeat1:	; repeat is key word
+		mov edx, offset str1
+		call writestring
+		loop repeat1
+exit
+main endP
+end

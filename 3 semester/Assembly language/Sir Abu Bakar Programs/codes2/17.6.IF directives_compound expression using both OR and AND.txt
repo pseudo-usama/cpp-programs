@@ -1,0 +1,33 @@
+;IF statement
+comment ?
+	if(((eax==ebx) || (eax>ebx))&& (eax>ecx))
+		eax is greatest
+	else
+		nothing
+	
+? comment
+
+
+include irvine32.inc
+
+.data
+str1 byte "eax is greatest",0ah,0
+str2 byte "nothing",0ah,0
+
+.code
+main Proc
+	mov eax, 10
+	mov ebx, 10
+	mov ecx, 2
+
+	.if (eax==ebx || eax>ebx)&&(eax>ecx)
+		lea edx, str1
+		call writestring
+	.else
+		lea edx, str2
+		call writestring
+	.endif
+		
+exit
+main endP
+end

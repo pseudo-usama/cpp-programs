@@ -1,0 +1,65 @@
+include Irvine32.inc
+
+.code
+
+main Proc
+
+; 40+30+100-2*4+2*2-5*6-3=133=85h
+;reading from left
+; addition and subtraction have equal priority. so first come first serve rule will apply
+;multiplication has higher priority than both addition and subtraction
+
+;2*4
+mov eax, 2
+mov ebx, 4
+
+mul ebx; eax=eax*ebx=2*4=8=8h
+mov esi, eax ; saving result in another register
+
+;2*2
+mov eax, 2
+mov ebx, 2
+
+mul ebx; eax=eax*ebx=2*2=4=4h
+mov edi, eax ;saving result in another register
+
+;5*6
+mov eax, 5
+mov ebx, 6
+
+mul ebx; eax=eax*ebx=5*6=30=1Eh
+mov ebp, eax ;saving result in another register
+
+;eax has value which is evaluted at last i.e ebp=1Eh
+
+; (40   +30+100-2*4+2*2-5*6-3)
+mov eax, 40; initializing again for expression reading from left
+
+;40+30 ; (40+30   +100-2*4+2*2-5*6-3)
+add eax, 30 ; eax = eax+30= 40+30=70=46h
+
+;Previous resul +100 ; (40+30+100    -2*4+2*2-5*6-3)
+add eax, 100; eax = eax+100= 70+100=170=AAh
+
+;(40+30+100-(2*4)    +2*2-5*6-3)
+;Previous resul -(2*4); esi has copy of 2*4
+sub eax, esi; eax = eax-esi= 170-8=162=A2h
+
+;(40+30+100-2*4+(2*2)     -5*6-3)
+;Previous resul +(2*2) ; edi has copy of 2*2=4
+add eax, edi; eax = eax+edi= 162-4=166=A6h
+
+;(40+30+100-2*4+2*2-(5*6)      -3)
+;Previous resul -(5*6); ebp has copy of 5*6=30=1E
+sub eax, ebp; eax = eax-ebp= 166-30=136=88h
+
+;(40+30+100-2*4+2*2-(5*6)-3)
+;Previous resul - 3
+sub eax, 3;eax = eax-3= 136-3=133=85h
+
+call DumpRegs
+exit
+
+main endP
+
+end

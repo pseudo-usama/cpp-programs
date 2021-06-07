@@ -1,0 +1,32 @@
+;IF statement
+comment ?
+	if((eax==ebx) || (eax<ebx)) 
+		less or equal
+	else
+		greater
+	
+? comment
+
+
+include irvine32.inc
+
+.data
+str1 byte "less or Equal",0ah,0
+str2 byte "greater",0ah,0
+
+.code
+main Proc
+	mov eax, 0
+	mov ebx, 10
+
+	.if eax==ebx || eax<ebx
+		lea edx, str1
+		call writestring
+	.else
+		lea edx, str2
+		call writestring
+	.endif
+		
+exit
+main endP
+end

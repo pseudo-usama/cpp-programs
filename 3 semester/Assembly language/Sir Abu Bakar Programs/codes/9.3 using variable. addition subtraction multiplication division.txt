@@ -1,0 +1,42 @@
+;(1) addition, subtraction, multiplicatio and division by using 32 bit variable
+;and result store in a 32 bit register 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::::::::::::::::
+
+include Irvine32.inc
+
+.data
+
+	;32 bit variable
+	var1 dd 32 ;var1 = 32 = 20h
+	var2 dd 4 ;var2 = 4 = 4h
+
+.code
+
+main proc
+	
+	;addition
+	mov esi, var1 ;eax=var1=20h this is initializing of register by variable
+	add esi, var2 ;eax = eax + 4h = 20h + 4h = 24h
+
+	;subtraction (positive result)
+	mov ebx, var1 ;ebx = var1 = 32 = 20h
+	sub ebx, var2 ;ebx = ebx + 4h = 20h - 4h = 1Ch
+
+	;subtraction (negative result)
+	mov ecx, var2 ;
+	sub ecx, var1 ;ecx = 4-32 = -28 = FFFFFFE4
+
+	;multiplication
+	mov eax, var1
+	mul var2 ;eax=eax*var2= 32*4=128=80h
+	mov edi, eax ;saving result into another register so that below command cannnot update data
+
+	;division
+	mov eax, var1
+	div var2 ;eax=eax/var2=32/4=8=8h
+	
+	call dumpregs
+exit
+main endP
+
+end

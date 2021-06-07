@@ -1,0 +1,39 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+intrinsic data types(directive initializer) 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Byte: 8 bit unsigned integer:B is used for it. B stands for byte
+
+sbyte: 8 bit signed integer: SB is used for it. it srands for signed byte
+
+word: 16 bit unsigned integer (can also be a near pointer in real address mode)
+
+sword: 16 bit signed integer
+
+dword: 32 bit unsigned integer: D is used for it. it stands for double. (can also be a near pointer in real address mode)
+short double
+
+sdword: 32 bit signed integer: SD: it stands for signed double
+short signed double
+
+fword: 48 bit integer (far pointer in protected mode)
+
+qword: 64 bit integer. Q stands for Quad. long double
+
+tbyte: 80 bit (10-byte) integer. T stands for Ten-byte
+
+Real4: 32 bit (4 byte) IEEE short real
+
+real8: 64 bit (8 byte) IEEE long real
+
+real10: 80 bit (10 byte) IEEE extended real
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Legacy data directives
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DB: 8 bit integer: define byte
+DW: 16 bit integer:define word
+DD: 32 bit integer or real: define double
+DQ: 64 bit integer or real: define quad
+DT: define 80 bit (10 byte) integer: define tbyte
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

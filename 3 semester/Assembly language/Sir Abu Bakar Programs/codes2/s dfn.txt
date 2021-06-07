@@ -1,0 +1,48 @@
+;(1) getting input from user
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::::::::::::::::
+
+include Irvine32.inc
+
+.data
+	num1 dd 0
+	num2 dd 0
+	str1 byte "enter first number : ", 0ah, 0dh, 0
+	str2 byte "enter second number : ", 0ah, 0dh, 0
+	str3 byte "sum of above numbers store in register EBP : "
+.code
+main PROC
+     lea edx, str1
+	call writestring
+	
+	call readint
+	mov num1, eax
+	
+	lea edx, str2
+	call writestring
+	
+	call readint
+	;mov num2, eax
+	add eax, num1
+
+	lea edx, str3
+	call writestring
+	
+	;call readhex
+	;mov edi, eax
+	;mov str1, "0"
+	;call readchar
+	;mov str1, al
+	;lea edx, str1
+	;call writestring
+
+	;mov ebp, 0
+	;add ebp, num1
+	;add ebp, num2
+
+	call writeint
+	;call dumpregs
+	call crlf
+exit
+
+main endP
+end

@@ -1,0 +1,42 @@
+;stack
+;PUSH	save value of register/variable into stack
+;POP	return top value of stack and save into specified register/variable
+
+include irvine32.inc
+
+.code
+main Proc
+		mov eax, 8
+		mov ebx, 9
+
+		PUSH eax	;save value of eax=8
+		PUSH ebx	;save value of ebx=9
+
+		;change values of above registers and display
+		mov eax, 0
+		mov ebx, 2
+
+		call writedec
+		call crlf
+		mov eax, ebx
+		call writedec
+		call crlf
+
+		;getting original values of registers and display
+		
+		pop eax
+		call writedec
+		call crlf
+
+		pop ebx
+		mov eax, ebx
+		call writedec
+		call crlf
+
+		;although stack doesn't has our data. if we pop now then dummy data would be returned.
+		pop eax
+		call writedec
+		call crlf
+exit
+main endP
+end

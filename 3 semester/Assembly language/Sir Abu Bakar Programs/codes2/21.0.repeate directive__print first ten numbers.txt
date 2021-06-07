@@ -1,0 +1,16 @@
+;repeate directive
+
+include irvine32.inc
+
+.code
+main Proc
+		mov eax, 0
+
+		.repeat
+			call writedec
+			call crlf
+			inc eax
+		.until eax==10
+exit
+main endP
+end

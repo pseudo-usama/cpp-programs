@@ -1,0 +1,31 @@
+;While loop
+;Implement following C language program into assembly language
+comment ?
+	while(eax<=ebx){
+		eax is less than or equal to ebx
+	}
+? comment
+
+include irvine32.inc
+.data
+str1 byte "eax is less than ebx", 0ah,0
+
+.code
+main Proc
+	mov eax, 0
+	mov ebx, 10
+
+	lable1:
+		cmp eax, ebx
+		jbe lable2
+		exit
+
+	lable2:
+		lea edx, str1
+		call writeint
+		inc eax
+		jmp lable1
+		
+exit
+main endP
+end

@@ -1,0 +1,61 @@
+include Irvine32.inc
+
+.code
+
+main Proc
+
+;100 + 50 + 10 / 2 * 10 - 40 + 2 - 50 / 5
+;division and multiplication have equal priority. first come first serve rule apply by reading from left
+;100 + 50 +(10 / 2) * 10 - 40 + 2 - 50 / 5
+;100 + 50 +    5    * 10 - 40 + 2 - 50 / 5
+;100 + 50 +   (5   * 10) - 40 + 2 - 50 / 5
+;100 + 50 +    50        - 40 + 2 - 50 / 5
+;100 + 50 +    50        - 40 + 2 -(50 / 5)
+;100 + 50 +    50        - 40 + 2 - 10
+;addition and subtraction have equal priority. first come first serve rule apply by reading from left
+;(100+50) +    50        - 40 + 2 - 10
+;  150    +    50        - 40 + 2 - 10
+;(150    +    50)        - 40 + 2 - 10
+;       200              - 40 + 2 - 10
+;  ( 200                 -40) + 2 - 10
+;               160           + 2 - 10
+;              ( 160 + 2 ) - 10
+;                 162 - 10
+;                   152 =  98h
+
+;10/2
+mov eax, 10
+mov ebx, 2 
+
+mov edx, 0
+
+div ebx; eax=eax/ebx=10/2=5=5h
+;mov esi, eax; save a copy of data of eax into esi
+
+;Previous result * 10
+mov ebx, 10
+mul ebx; eax=eax*ebx=5*10=50=32h
+mov esi, eax; save a copy of data of eax into esi, because it will be required latter
+
+;50/5
+mov eax, 50
+mov ebx, 5
+
+div ebx; eax=eax/ebx=50/5=10=Ah
+mov edi, eax; save a copy of data of eax into edi, because it will be required latter
+
+;now reading from left and perform addition and subtraction
+
+mov eax, 100
+add eax, 50
+add eax, esi
+sub eax, 40
+add eax, 2
+sub eax, edi
+
+call DumpRegs
+exit
+
+main endP
+
+end

@@ -1,0 +1,47 @@
+;compound expression using AND operator
+;following C language statement is coverted into assembly
+
+comment ?
+if((eax > ebx) OR (eax >= ecx))
+{
+	eax exists
+}else
+{
+	nothing
+}
+? comment
+
+
+include irvine32.inc
+
+.data
+str1 byte "eax exists",0ah,0
+str2 byte "nothing",0ah,0
+
+.code
+main Proc
+	
+	mov eax, 9
+	mov ebx, 20
+	mov ecx, 10
+
+	cmp eax, ebx
+	JA lableA
+	JBE lableC
+
+	lableC:
+		cmp eax, ecx
+		JAE	lableA
+		JB lable0
+
+	lable0:
+		lea edx, str2
+		call writestring
+		exit
+	lableA:
+		lea edx, str1
+		call writestring
+	
+exit
+main endP
+end

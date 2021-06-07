@@ -1,0 +1,26 @@
+;Parity Flag (PF)
+;Parity Flag (PF)
+;if destination register contains even number of 1s in lowest BYTE (8 bits) after execution of an instruction
+;then PF is set (1) otherwise it is cleared (0)
+
+include irvine32.inc
+
+.code
+main Proc
+
+call dumpregs	;dummy value of flags
+
+mov eax, 0000003h	;number of 1s = 2
+mov ebx, 0000001h	;number of 1s = 1
+
+call dumpregs	;check values of EAX and EBX
+
+add eax, ebx	;number of 1s = 1	PF=0
+call dumpregs
+
+add ebx, 2	;number of 1s = 2	PF=1
+call dumpregs
+
+exit
+main endP
+end

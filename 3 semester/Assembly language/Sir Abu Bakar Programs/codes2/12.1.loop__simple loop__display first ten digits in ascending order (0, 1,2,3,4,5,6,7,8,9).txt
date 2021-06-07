@@ -1,0 +1,21 @@
+;unconditional LOOP
+;simple LOOP
+;LOOP	: jump to specified lable according to value of ECX (ECX != 0)
+
+
+
+
+include irvine32.inc
+.code
+
+main Proc
+	mov ecx, 10
+	mov eax, 0
+	repeat1:	
+		call writeint
+		add eax, 1 
+		;or inc eax
+		loop repeat1
+exit
+main endP
+end

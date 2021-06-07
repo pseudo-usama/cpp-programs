@@ -1,0 +1,34 @@
+;IF statement
+comment ?
+	if(eax==ebx)
+		equal
+	else
+		not equal
+	
+? comment
+
+include irvine32.inc
+
+.data
+str1 byte "Equal",0ah,0
+str2 byte "Not equal",0ah,0
+
+.code
+main Proc
+	mov eax, 3
+	mov ebx, 3
+
+	cmp eax, ebx
+	JE lable2
+		
+		lea edx, str2
+		call writestring
+		exit
+
+	lable2:
+	lea edx, str1
+	call writestring
+		
+exit
+main endP
+end

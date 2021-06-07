@@ -1,0 +1,38 @@
+;compound expression using AND operator
+;following C language statement is coverted into assembly
+
+comment ?
+if((eax>ebx) and (eax>ecx))
+{
+	eax is greatest number
+}
+? comment
+
+
+include irvine32.inc
+
+.data
+str1 byte "EAX is greater than both EBX and ECX",0ah,0
+
+.code
+main Proc
+	
+	mov eax, 5
+	mov ebx, 1
+	mov ecx, 3
+		
+		cmp eax, ebx
+		JA lable1
+		exit
+
+		Lable1:
+			cmp eax, ecx
+			JA lable2
+			exit
+
+		Lable2:
+			lea edx, str1
+			call writestring
+exit
+main endP
+end

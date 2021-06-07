@@ -1,0 +1,28 @@
+;unconditional JUMP
+;without using specified Flags
+;JMP	jump to specified lable without checking any condition/flag
+
+include irvine32.inc
+
+.code
+main Proc
+	mov eax, 1
+	mov ebx, 10
+	
+	lable1:
+		cmp eax, ebx
+		je lable2
+		inc eax
+		call writeint
+		jmp lable1
+
+	lable2:
+		call crlf
+		call crlf
+		mov eax, 0Fh
+		call writeint
+		call crlf
+		
+exit
+main endP
+end

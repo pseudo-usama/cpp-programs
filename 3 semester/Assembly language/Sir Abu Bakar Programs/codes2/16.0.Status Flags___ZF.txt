@@ -1,0 +1,22 @@
+;result of an operation produce 0 then ZF=1(set) otherwise ZF=0(clear)
+
+include irvine32.inc
+
+.code
+main Proc
+
+mov eax, 10
+mov ebx, 10
+mov ecx, 20
+
+call dumpregs	;dumy values of flags
+
+sub ebx, eax
+call dumpregs	;ZF=1
+
+sub ecx, ebx
+call dumpregs	;ZF=0
+
+exit
+main endP
+end

@@ -1,0 +1,31 @@
+;IF statement
+comment ?
+	if(eax<=ebx)
+		less or equal
+	else
+		not equal
+	
+? comment
+
+
+include irvine32.inc
+
+.data
+str1 byte "less or Equal",0ah,0
+
+.code
+main Proc
+	mov ebx, 2
+	mov ecx, 3
+
+	cmp ebx, ecx
+	JBE lable2
+	exit
+
+	lable2:
+	lea edx, str1
+	call writestring
+		
+exit
+main endP
+end

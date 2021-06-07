@@ -1,0 +1,22 @@
+;(1) defining some data 
+;(2) declaration and initialization of variable
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::::::::::::::::
+
+;(1) data is defined by .data segment before .code
+;(2) variable is declared by data type (directive initializer) and initialize by its initial value according to its data type
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+include Irvine32.inc
+
+.data
+
+var dt 1 ;[variable name] [directive initializer] [initial value]
+
+.code
+
+main proc
+	
+exit
+main endP
+
+end

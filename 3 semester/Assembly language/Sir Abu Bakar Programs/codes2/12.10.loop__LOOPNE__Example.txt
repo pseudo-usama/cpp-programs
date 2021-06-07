@@ -1,0 +1,20 @@
+;conditional LOOP
+;LOOPNE(same as LOOPNZ)	:jump to specified lable when ZF=O
+
+include irvine32.inc
+
+.code
+main Proc
+
+mov eax, 2
+
+lable1:
+	
+	call writeint
+	add eax, 1
+	cmp eax, 10
+	Loopne lable1
+
+exit
+main endP
+end

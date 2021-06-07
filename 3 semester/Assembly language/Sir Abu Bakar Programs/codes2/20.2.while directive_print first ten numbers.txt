@@ -1,0 +1,16 @@
+;while directive
+
+include irvine32.inc
+
+.code
+main Proc
+		mov eax, 0
+
+		.while eax<10
+			call writedec
+			call crlf
+			inc eax
+		.endw
+exit
+main endP
+end

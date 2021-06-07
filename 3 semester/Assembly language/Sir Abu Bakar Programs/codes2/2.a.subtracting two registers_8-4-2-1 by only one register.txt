@@ -1,0 +1,20 @@
+include Irvine32.inc
+
+.code
+
+main Proc
+
+;8-4-1-2 by only one registers
+
+mov eax, 8
+
+sub eax, 4
+sub eax, 1
+sub eax, 2
+
+call DumpRegs
+exit
+
+main endP
+
+end

@@ -1,0 +1,36 @@
+;array (elements of 32 bits)
+;getting ten user defined array element
+;display elements of the array
+
+include irvine32.inc
+
+.data
+list dword 10 dup(?)	;declering array of size 10
+array_size = ($-list)/4
+
+.code
+main Proc
+		mov ebx, 0
+		mov edx, offset list
+		mov ecx, 10
+		
+		lable1:
+			call readdec
+			mov [edx+ebx], eax	;indirect addressing
+			add ebx, 4
+		loop lable1
+		
+		call crlf
+		call crlf
+		
+		mov edx, offset list
+		mov ecx, 10
+		mov ebx, 0
+		lable2:
+			mov eax, [edx+ebx]
+			call writedec
+			add ebx, 4 
+		loop lable2
+exit
+main endP
+end

@@ -1,0 +1,43 @@
+;array
+
+include irvine32.inc
+
+.data
+list dword 5 dup(0)	;declering array of size 5 having 0 as initial value
+array_size = ($-list)/4	;getting size of array
+
+.code
+main Proc
+		;displaying elements of array without loop/jump
+
+		mov edi, offset list	;getting base address of list
+		
+		;1st element
+		mov eax, [edi+0]
+		call writedec
+		call crlf
+
+		;2nd element
+		mov eax, [edi+4]
+		call writedec
+		call crlf
+
+		;3rd element
+		mov eax, [edi+8]
+		call writedec
+		call crlf
+
+		;4th element
+		mov eax, [edi+12]
+		call writedec
+		call crlf
+
+		;5th element
+		mov eax, [edi+16]
+		call writedec
+		call crlf
+
+
+exit
+main endP
+end

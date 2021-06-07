@@ -1,0 +1,20 @@
+include irvine32.inc
+
+.code
+main Proc
+
+mov eax, 10
+mov ebx, -10
+
+call dumpregs
+
+cmp eax, ebx	;SF == OF	;sign value existed, resultant value is greater than both inputs values
+
+call dumpregs	
+
+
+	
+		
+exit
+main endP
+end

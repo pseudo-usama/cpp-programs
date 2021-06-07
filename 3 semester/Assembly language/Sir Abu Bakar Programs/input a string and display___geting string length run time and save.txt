@@ -1,0 +1,61 @@
+INCLUDE Irvine32.inc
+
+.data 
+
+str1 BYTE "Enter a string of characters: ", 0 
+str2 BYTE "Entered: ", 0 
+str3 BYTE "Reversed: ", 0
+
+userInput BYTE 80 DUP(0) 
+userReversed BYTE 80 DUP(0)
+dwordVval DWORD ?
+strSize = ($ - userInput) - 1 
+
+.code 
+;******** GET INPUT FROM THE USER 
+main PROC 
+
+mov edx, OFFSET str1 
+call WriteString ; "Enter a string of characters: "
+
+mov edx, OFFSET userInput ; StringEntered 
+mov ecx, sizeof userInput - 1 ; load ecx with length -1 
+call ReadString ; get input from the user 
+
+;********** PUSH AND POP ROUTINE 
+mov ecx, strSize
+mov esi,0 
+
+L1: 
+
+movzx eax, userInput[esi] ; get character 
+push eax ; push on stack 
+inc esi 
+Loop L1 
+mov ecx,strSize ; Pop the name from the stack, in reverse, 
+mov esi,0 ; and store in the StringReversed array. 
+
+L2: 
+
+pop eax ; get character 
+mov userReversed[esi],al ; store in string 
+inc esi 
+Loop L2 
+
+;******************************* DISPLAY ROUTINE 
+mov edx, OFFSET str2 ; "Entered: " 
+call WriteString 
+
+mov edx, OFFSET userInput ; User Input
+call WriteString 
+call CrLf
+
+mov edx, OFFSET str3 ; "Reversed: " 
+call WriteString
+mov edx,OFFSET userReversed ; Display the reversed string.
+call WriteString 
+call Crlf 
+
+exit
+main ENDP
+END main

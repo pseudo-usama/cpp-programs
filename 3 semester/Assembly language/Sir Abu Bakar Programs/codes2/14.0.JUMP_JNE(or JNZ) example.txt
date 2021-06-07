@@ -1,0 +1,23 @@
+;conditional JUMPS
+;using specified Flags
+;JNE	or JNZ	Jump to specific lable when ZF=0
+
+include irvine32.inc
+
+.code
+main Proc
+	mov eax, 1
+	mov ebx, 10
+	lable1:
+		
+		inc eax
+		call writeint
+		call crlf
+
+		cmp ebx, eax
+
+		jnz lable1
+		
+exit
+main endP
+end

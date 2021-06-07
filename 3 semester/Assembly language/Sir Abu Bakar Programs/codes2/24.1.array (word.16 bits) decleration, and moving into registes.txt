@@ -1,0 +1,31 @@
+include irvine32.inc
+
+.data
+
+list word 1400h, 0011h, 0cda4h
+
+;byte addressing technique is used
+
+;1400	-->	00-->list(base address, offset)
+;			14-->list + 1
+;0011h	-->	11-->list + 2
+;			00-->list + 3
+;0cda4h -->	a4-->list + 4
+;		--> cd-->list + 5
+
+.code
+main Proc
+	
+	mov eax, 0
+	mov ax, list ; al is 8 bit of EAX
+
+	;or
+	movzx ebx, list + 2;place zeroes after list value to extend upto 32 bits
+ 
+	movzx ecx, list + 4
+
+	call dumpregs
+		
+exit
+main endP
+end

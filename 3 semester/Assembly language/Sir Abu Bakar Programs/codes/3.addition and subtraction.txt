@@ -1,0 +1,28 @@
+include Irvine32.inc
+
+.code
+
+main Proc
+
+
+; 4+3+10-2+4+1-5-5 = 10 = Ah
+; preference for operator (for additon and subtraction)
+;reading from left side and operator
+;that operation which comes first
+
+mov eax, 4
+
+add eax, 3
+add eax, 10
+sub eax, 2
+add eax, 4
+add eax, 1
+sub eax, 5
+sub eax, 5
+
+call DumpRegs
+exit
+
+main endP
+
+end

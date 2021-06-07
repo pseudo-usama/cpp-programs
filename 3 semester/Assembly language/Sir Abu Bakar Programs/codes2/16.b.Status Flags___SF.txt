@@ -1,0 +1,23 @@
+;Signed Flag (SF)
+;if destination regsister becomes negative after execution of an instruction then SF is set (1)
+;otherwise SF is cleared (0)
+
+include irvine32.inc
+
+.code
+main Proc
+
+mov eax, -10
+mov ebx, 2
+
+call dumpregs	;dumy value of flags
+
+add eax, ebx
+call dumpregs	;SF=1	
+
+add ebx, ebx
+call dumpregs	;SF=0
+
+exit
+main endP
+end

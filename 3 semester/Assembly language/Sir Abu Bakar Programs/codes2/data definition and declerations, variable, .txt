@@ -1,0 +1,36 @@
+include Irvine32.inc
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;defining data type
+
+.data
+msg db "my name",  "$"
+;decleraction and initialization of variable
+count dd 2; variable name is count, dd is data type and 2 is initializing value; 32 bit register
+
+;defining data type
+dword_data dword 10; variable name is dword_data, dword is data type and 10 is initializing value; 32 bit register unsigned
+
+
+word_data word -5; variable name is word_data, word is data type for 16 bit, 5 is value
+sword_data sword -2; variable name is sword_data, sword is data type and 2 is initializing value; 16 bit register signed
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+.code
+
+main Proc
+
+mov eax, 8
+mov ebx, count; moving variable into 32 bit register
+mov ecx, dword_data; moving variable into 32 bit register
+mov dx, word_data; moving 16 bit value into 16 bit register
+mov di, sword_data
+
+mov ax, seg msg
+;mov ds, ax
+;lea dx, msg
+
+call DumpRegs
+exit
+
+main endP
+end

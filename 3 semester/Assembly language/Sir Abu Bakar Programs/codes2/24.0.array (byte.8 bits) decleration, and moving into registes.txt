@@ -1,0 +1,32 @@
+include irvine32.inc
+
+.data
+
+list byte 14, 11h, 10000100b, 0a4h 	;"b" is used for binary number
+
+
+;byte addressing technique is used
+
+;14  -->  list (base address, offset)
+;11h -->  list + 1
+;10101101b --> list + 2
+;0A4h --> list + 3
+
+.code
+main Proc
+	
+	mov eax, 0
+	mov al, list ; al is 8 bit of EAX
+
+	;or
+	movzx ebx, list ;place zeroes after list value to extend upto 32 bits
+ 
+	movzx ecx, list + 1
+	movzx edx, list + 2
+	movzx esi, list + 3
+
+	call dumpregs
+		
+exit
+main endP
+end

@@ -1,0 +1,18 @@
+include Irvine32.inc
+
+.code
+
+main Proc
+
+
+mov eax, 8
+mov ebx, 4
+
+mul ebx ; eax = eax*ebx; 8*4=32=20h
+
+call DumpRegs
+exit
+
+main endP
+
+end

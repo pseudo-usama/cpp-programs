@@ -1,0 +1,22 @@
+;if instruction generates result that is too largs (or too small) for destination register
+;then CF is set otherwise it is cleared
+
+include irvine32.inc
+
+.code
+main Proc
+
+mov ax, 0ffffh
+mov ebx, 0ah
+
+call dumpregs	;dumy values of flags
+
+add ax, 1
+call dumpregs	;CF=1
+
+add ebx, 1
+call dumpregs	;CF=0
+
+exit
+main endP
+end

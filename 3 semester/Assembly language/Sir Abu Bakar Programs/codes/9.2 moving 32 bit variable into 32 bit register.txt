@@ -1,0 +1,27 @@
+;(1) moving data of variable into register according to its size
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+include Irvine32.inc
+
+.data
+
+	;32 bit variable
+	var_32_us dword 1
+	var_32_s sdword 2
+	var_32 dd 3
+
+.code
+
+main proc
+	
+	;movig 32 bit variabl into 32 bit register
+	mov eax, var_32_us
+	mov ebx, var_32_s
+	mov ecx, var_32
+	
+	call dumpregs
+exit
+main endP
+
+end
