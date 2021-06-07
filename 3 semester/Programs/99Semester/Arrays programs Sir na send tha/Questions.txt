@@ -1,0 +1,5 @@
+1. Write a program to find sum and average of all the elements in an array.
+2. Write a program to find the maximum number in an array.
+3. Write a program to find the minimum number in an array.
+4. Write a program to insert an element on specific location without changing other elements in array.
+5. Write a program to initialize an Array, Store the Squares of these Elements in another Array & Print it
