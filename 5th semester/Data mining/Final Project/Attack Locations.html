@@ -1,0 +1,174 @@
+<!-- 
+    https://www.aspsnippets.com/Articles/Read-CSV-File-in-JavaScript-using-HTML5-File-API.aspx
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Attack Location (by Year)</title>
+
+    <style>
+        body {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        #menu {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 30px;
+            padding: 20px 50px;
+            background: rgb(241, 241, 241);
+            z-index: 1;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        #menu select {
+            font-size: 20px;
+        }
+
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhIe3zbUUVnXS-ArgIro9oXa2BUGgf4Cs&callback=initMap&libraries=geometry"
+        async defer></script>
+</head>
+
+<body>
+    <div id="menu">
+        <div style="font-size: 30px;">Attack Locations (by Year)</div>
+        <div style="margin-top: 10px; text-align: center;">
+            <label for="year" style="font-size: 20px;">Select Year:</span>
+            <select id="year" onchange="MarkLocation();" style="margin-left: 5px;">
+                <option value="year">Year</option>
+                <option value="1970">1970</option>
+                <option value="1971">1971</option>
+                <option value="1972">1972</option>
+                <option value="1973">1973</option>
+                <option value="1974">1974</option>
+                <option value="1975">1975</option>
+                <option value="1976">1976</option>
+                <option value="1977">1977</option>
+                <option value="1978">1978</option>
+                <option value="1979">1979</option>
+                <option value="1980">1980</option>
+                <option value="1981">1981</option>
+                <option value="1982">1982</option>
+                <option value="1983">1983</option>
+                <option value="1984">1984</option>
+                <option value="1985">1985</option>
+                <option value="1986">1986</option>
+                <option value="1987">1987</option>
+                <option value="1988">1988</option>
+                <option value="1989">1989</option>
+                <option value="1990">1990</option>
+                <option value="1991">1991</option>
+                <option value="1992">1992</option>
+                <option value="1993">1993</option>
+                <option value="1994">1994</option>
+                <option value="1995">1995</option>
+                <option value="1996">1996</option>
+                <option value="1997">1997</option>
+                <option value="1998">1998</option>
+                <option value="1999">1999</option>
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
+                <option value="2004">2004</option>
+                <option value="2005">2005</option>
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+            </select>
+
+            <div style="margin-top: 10px; font-size: 10px;">
+                <label for="fileUpload">Select the CSV file.</label>
+                <input type="file" id="fileUpload" value="Globel_Terrorism.csv" />
+            </div>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script>
+        var markers = [];
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: new google.maps.LatLng(0.000000, 0.000000),
+                zoom: 2,
+                disableDefaultUI: true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+        }
+
+        function MarkLocation() {
+            var year = document.getElementById('year');
+            year.setAttribute('disabled', '');
+
+            // First we remove old Markers
+            for(var i = 0; i < markers.length; i++)
+                markers[i].setMap(null);
+            markers =[];
+
+            // Now we create Markers
+            var fileUpload = document.getElementById("fileUpload");
+            var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+            if (regex.test(fileUpload.value.toLowerCase())) {
+                if (typeof (FileReader) != "undefined") {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        var rows = e.target.result.split("\n");
+
+                        for (var i = 1; i < rows.length; i++) {
+                            var cells = rows[i].split(",");
+                            if (cells.length > 1 && (cells[13] != '' || cells[14] != '') && cells[1] == year.options[year.selectedIndex].value) {
+                                markers.push(
+                                    new google.maps.Marker({
+                                    map: map,
+                                    position: new google.maps.LatLng(cells[13], cells[14]),
+                                    icon: {
+                                        path: google.maps.SymbolPath.CIRCLE,
+                                        fillColor: '#00F',
+                                        fillOpacity: 0.6,
+                                        strokeColor: '#00A',
+                                        strokeOpacity: 0.9,
+                                        strokeWeight: 1,
+                                        scale: 1
+                                        }
+                                    })
+                                );
+                            }
+                        }
+                        year.removeAttribute('disabled');
+                    }
+                    reader.readAsText(fileUpload.files[0]);
+                } else {
+                    alert("This browser does not support HTML5.");
+                    year.removeAttribute('disabled');
+                }
+            } else {
+                alert("Please upload a valid CSV file.");
+                year.removeAttribute('disabled');
+            }
+        }
+    </script>
+</body>
+
+</html>
