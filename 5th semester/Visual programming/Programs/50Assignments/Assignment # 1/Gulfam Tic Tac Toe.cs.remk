@@ -1,0 +1,367 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tic_Toc_Game
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Tic_Toc Game = new Tic_Toc();
+            Game.To_Show();
+            while (true)
+            {
+                Game.Input_Turn();
+            }
+        }
+    }
+    class Tic_Toc
+    {
+        public char[,] boxs = new char[3, 3];
+        private string IsTurn;
+        public Tic_Toc()
+        {
+            /* Initialization Numbers to All*/
+            boxs = new char[3, 3]
+            {
+                {'1','2','3'},
+                {'4','5','6'},
+                {'7','8','9'}
+            };
+            IsTurn = Get_Turn();
+        }
+        public void To_Show()
+        {
+            for (int i = 0; i < boxs.GetLength(0); i++)
+            {
+                Console.WriteLine("  -----------  ");
+                for (int j = 0; j < boxs.GetLength(1); j++)
+                {
+                    Console.Write(" | " + boxs[i, j]);
+                    if (j == 2)
+                    {
+                        Console.WriteLine(" | ");
+                    }
+                }
+            }
+            Console.WriteLine("  -----------  ");
+        }
+
+        private string Get_Turn()
+        {
+            Random random = new Random();
+            int num = random.Next();
+            if (num % 2 == 0)
+            {
+                return "Player 1";
+            }
+            else
+            {
+                return "Player 2";
+            }
+        }
+        private char Get_Icon()
+        {
+            if (IsTurn == "Player 1")
+            {
+                return 'O';
+            }
+            else
+            {
+                return 'X';
+            }
+        }
+        private void Change_Turn()
+        {
+            if (IsTurn == "Player 1")
+            {
+                IsTurn = "Player 2";
+            }
+            else
+            {
+                IsTurn = "Player 1";
+            }
+        }
+        private bool Is_Box_Empty(int i, int j)
+        {
+            return boxs[i, j] == 'X' || boxs[i, j] == 'O' ? false : true;
+        }
+
+        private int _To_Get_Key()
+        {
+            int Val;
+            do
+            {
+                Console.WriteLine("\n" + IsTurn + " Turn.... " + Get_Icon());
+                Console.Write("Enter Box Number = ");
+                char Key = Console.ReadKey().KeyChar;
+                if (Key > '9' || Key < '1')
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid BOX....\n");
+                    this.To_Show();
+                }
+                else
+                {
+                    Val = Convert.ToInt32(Key) - 49;
+                    int i = Val / 3;
+                    int j = Val % 3;
+
+                    if (!Is_Box_Empty(i, j))
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Box is Already Selected....\n");
+                        this.To_Show();
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        break;
+                    }
+                }
+
+            } while (true);
+            return Val;
+        }
+        private int Winner_Verify()
+        {
+            /* Row Verify*/
+            if ((boxs[0, 0] == 'X' && boxs[0, 1] == 'X' && boxs[0, 2] == 'X') || (boxs[0, 0] == 'O' && boxs[0, 1] == 'O' && boxs[0, 2] == 'O'))
+            {
+                if (boxs[0, 0] == 'O')
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            else if ((boxs[1, 0] == 'X' && boxs[1, 1] == 'X' && boxs[1, 2] == 'X') || (boxs[1, 0] == 'O' && boxs[1, 1] == 'O' && boxs[1, 2] == 'O'))
+            {
+                if (boxs[1, 0] == 'O')
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            else if ((boxs[2, 0] == 'X' && boxs[2, 1] == 'X' && boxs[2, 2] == 'X') || (boxs[2, 0] == 'O' && boxs[2, 1] == 'O' && boxs[2, 2] == 'O'))
+            {
+                if (boxs[2, 0] == 'O')
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+
+                /* Column Verify*/
+            else if ((boxs[0, 0] == 'X' && boxs[1, 0] == 'X' && boxs[2, 0] == 'X') || (boxs[0, 0] == 'O' && boxs[1, 0] == 'O' && boxs[2, 0] == 'O'))
+            {
+                if (boxs[0, 0] == 'O')
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            else if ((boxs[0, 1] == 'X' && boxs[1, 1] == 'X' && boxs[2, 1] == 'X') || (boxs[0, 1] == 'O' && boxs[1, 1] == 'O' && boxs[2, 1] == 'O'))
+            {
+                if (boxs[0, 1] == 'O')
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            else if ((boxs[0, 2] == 'X' && boxs[1, 2] == 'X' && boxs[2, 2] == 'X') || (boxs[0, 2] == 'O' && boxs[1, 2] == 'O' && boxs[2, 2] == 'O'))
+            {
+                if (boxs[0, 2] == 'O')
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            /* Vertical Verify*/
+
+            else if ((boxs[0, 0] == 'X' && boxs[1, 1] == 'X' && boxs[2, 2] == 'X') || (boxs[0, 0] == 'O' && boxs[1, 1] == 'O' && boxs[2, 2] == 'O'))
+            {
+                if (boxs[0, 0] == 'O')
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            else if ((boxs[0, 2] == 'X' && boxs[1, 1] == 'X' && boxs[2, 0] == 'X') || (boxs[0, 2] == 'O' && boxs[1, 1] == 'O' && boxs[2, 0] == 'O'))
+            {
+                if (boxs[0, 2] == 'O')
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private void Winning(int Verify)
+        {
+            if (Verify == 1)
+            {
+                this.To_Show();
+                Console.WriteLine("\nPlayer 1 Win....\n");
+                Console.WriteLine("\nDONE>>>");
+
+                System.Environment.Exit(0);
+            }
+            else if (Verify == 2)
+            {
+                this.To_Show();
+                Console.WriteLine("\nPlayer 2 Win....\n");
+                Console.WriteLine("\nDONE>>>");
+
+                System.Environment.Exit(0);
+            }
+            else
+            {
+                this.To_Show();
+            }
+        }
+        public void Input_Turn()
+        {
+            int Box_No = _To_Get_Key();
+            int i = Box_No / 3;
+            int j = Box_No % 3;
+            boxs[i, j] = this.Get_Icon();
+            this.Winning(this.Winner_Verify());
+            this.Change_Turn();
+
+        }
+        private void Computer_Turn()
+        {
+
+        }
+        private int _To_Predict_Key()
+        {
+            if (boxs[1, 1] == '5')
+            {
+                return 4;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+        private int _Pridict(char[,] arr)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (arr[i, j] == 'X' || arr[i, j] == 'O')
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        char[,] temp = arr;
+                        temp[i, j] = 'O';
+                        if (Check_Predict(temp))
+                        {
+                            return i * 3 + j;
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                }
+
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (arr[i, j] == 'X' || arr[i, j] == 'O')
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        return i * 3 + j;
+                    }
+                }
+            }
+            return 0;
+        }
+        private bool Check_Predict(char[,] arr)
+        {
+            /* Row Verify*/
+            if (boxs[0, 0] == boxs[0, 1] && boxs[0,1] ==  boxs[0, 2])
+            {
+                return true;
+            }
+            else if (boxs[1, 0] ==  boxs[1, 1] && boxs[1, 2] == boxs[1,1])
+            {
+                return true;
+            }
+            else if (boxs[2, 0] ==  boxs[2, 1] &&  boxs[2, 2] == boxs[2,1])
+            {
+                return true;
+            }
+
+            /* Column Verify*/
+            else if (boxs[0, 0] ==  boxs[1, 0] &&  boxs[2, 0] == boxs[1,0])
+            {
+                return true;
+            }
+            else if (boxs[0, 1] ==  boxs[1, 1] &&  boxs[2, 1] == boxs[1,1])
+            {
+                return true;
+            }
+            else if (boxs[0, 2] ==  boxs[1, 2] &&  boxs[2, 2] == boxs[1,2])
+            {
+                return true;
+            }
+            /* Vertical Verify*/
+
+            else if (boxs[0, 0] ==  boxs[1, 1] &&  boxs[2, 2] == boxs[1,1])
+            {
+                return true;
+            }
+            else if (boxs[0, 2] ==  boxs[1, 1] &&  boxs[2, 0] == boxs[1,1])
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+    }
+}
+                                                                                                                                                                                                                                                                                                                                              

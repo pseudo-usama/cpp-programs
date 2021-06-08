@@ -1,0 +1,247 @@
+﻿namespace Hassan_Bashir__Database_
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.Insert_btn = new System.Windows.Forms.Button();
+            this.Insert_User_Name_Txt_box = new System.Windows.Forms.TextBox();
+            this.Insert_Password_Txt_box = new System.Windows.Forms.TextBox();
+            this.Data_Show_Grid = new System.Windows.Forms.DataGridView();
+            this.Show_btn = new System.Windows.Forms.Button();
+            this.Update_btn = new System.Windows.Forms.Button();
+            this.Update_User_Name_Txt_box = new System.Windows.Forms.TextBox();
+            this.Update_Password_Txt_box = new System.Windows.Forms.TextBox();
+            this.Update_Id_Txt_box = new System.Windows.Forms.TextBox();
+            this.Delete_Id_Txt_box = new System.Windows.Forms.TextBox();
+            this.Delete_btn = new System.Windows.Forms.Button();
+            this.Insertion_Group_Box = new System.Windows.Forms.GroupBox();
+            this.Deletion_Group_Box = new System.Windows.Forms.GroupBox();
+            this.Updation_Group_Box = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Data_Show_Grid)).BeginInit();
+            this.Insertion_Group_Box.SuspendLayout();
+            this.Deletion_Group_Box.SuspendLayout();
+            this.Updation_Group_Box.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // Insert_btn
+            // 
+            this.Insert_btn.Location = new System.Drawing.Point(118, 128);
+            this.Insert_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Insert_btn.Name = "Insert_btn";
+            this.Insert_btn.Size = new System.Drawing.Size(94, 52);
+            this.Insert_btn.TabIndex = 2;
+            this.Insert_btn.Text = "Insert";
+            this.Insert_btn.UseVisualStyleBackColor = true;
+            this.Insert_btn.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Insert_User_Name_Txt_box
+            // 
+            this.Insert_User_Name_Txt_box.Location = new System.Drawing.Point(34, 58);
+            this.Insert_User_Name_Txt_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Insert_User_Name_Txt_box.Name = "Insert_User_Name_Txt_box";
+            this.Insert_User_Name_Txt_box.Size = new System.Drawing.Size(259, 27);
+            this.Insert_User_Name_Txt_box.TabIndex = 0;
+            // 
+            // Insert_Password_Txt_box
+            // 
+            this.Insert_Password_Txt_box.Location = new System.Drawing.Point(34, 92);
+            this.Insert_Password_Txt_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Insert_Password_Txt_box.Name = "Insert_Password_Txt_box";
+            this.Insert_Password_Txt_box.Size = new System.Drawing.Size(259, 27);
+            this.Insert_Password_Txt_box.TabIndex = 1;
+            // 
+            // Data_Show_Grid
+            // 
+            this.Data_Show_Grid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Data_Show_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Data_Show_Grid.Location = new System.Drawing.Point(15, 556);
+            this.Data_Show_Grid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Data_Show_Grid.Name = "Data_Show_Grid";
+            this.Data_Show_Grid.RowTemplate.Height = 24;
+            this.Data_Show_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Data_Show_Grid.Size = new System.Drawing.Size(790, 188);
+            this.Data_Show_Grid.TabIndex = 2;
+            // 
+            // Show_btn
+            // 
+            this.Show_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Show_btn.Location = new System.Drawing.Point(711, 751);
+            this.Show_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Show_btn.Name = "Show_btn";
+            this.Show_btn.Size = new System.Drawing.Size(94, 54);
+            this.Show_btn.TabIndex = 4;
+            this.Show_btn.Text = "Show";
+            this.Show_btn.UseVisualStyleBackColor = true;
+            this.Show_btn.Click += new System.EventHandler(this.button2_Click);
+            this.Show_btn.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button2_MouseClick);
+            // 
+            // Update_btn
+            // 
+            this.Update_btn.Location = new System.Drawing.Point(116, 154);
+            this.Update_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Update_btn.Name = "Update_btn";
+            this.Update_btn.Size = new System.Drawing.Size(94, 50);
+            this.Update_btn.TabIndex = 3;
+            this.Update_btn.Text = "Update";
+            this.Update_btn.UseVisualStyleBackColor = true;
+            this.Update_btn.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // Update_User_Name_Txt_box
+            // 
+            this.Update_User_Name_Txt_box.Location = new System.Drawing.Point(32, 84);
+            this.Update_User_Name_Txt_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Update_User_Name_Txt_box.Name = "Update_User_Name_Txt_box";
+            this.Update_User_Name_Txt_box.Size = new System.Drawing.Size(259, 27);
+            this.Update_User_Name_Txt_box.TabIndex = 1;
+            // 
+            // Update_Password_Txt_box
+            // 
+            this.Update_Password_Txt_box.Location = new System.Drawing.Point(32, 119);
+            this.Update_Password_Txt_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Update_Password_Txt_box.Name = "Update_Password_Txt_box";
+            this.Update_Password_Txt_box.Size = new System.Drawing.Size(259, 27);
+            this.Update_Password_Txt_box.TabIndex = 2;
+            // 
+            // Update_Id_Txt_box
+            // 
+            this.Update_Id_Txt_box.Location = new System.Drawing.Point(32, 49);
+            this.Update_Id_Txt_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Update_Id_Txt_box.Name = "Update_Id_Txt_box";
+            this.Update_Id_Txt_box.Size = new System.Drawing.Size(259, 27);
+            this.Update_Id_Txt_box.TabIndex = 0;
+            // 
+            // Delete_Id_Txt_box
+            // 
+            this.Delete_Id_Txt_box.Location = new System.Drawing.Point(8, 81);
+            this.Delete_Id_Txt_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Delete_Id_Txt_box.Name = "Delete_Id_Txt_box";
+            this.Delete_Id_Txt_box.Size = new System.Drawing.Size(259, 27);
+            this.Delete_Id_Txt_box.TabIndex = 0;
+            // 
+            // Delete_btn
+            // 
+            this.Delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Delete_btn.ForeColor = System.Drawing.Color.White;
+            this.Delete_btn.Location = new System.Drawing.Point(91, 131);
+            this.Delete_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Delete_btn.Name = "Delete_btn";
+            this.Delete_btn.Size = new System.Drawing.Size(94, 48);
+            this.Delete_btn.TabIndex = 1;
+            this.Delete_btn.Text = "Delete";
+            this.Delete_btn.UseVisualStyleBackColor = false;
+            this.Delete_btn.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // Insertion_Group_Box
+            // 
+            this.Insertion_Group_Box.Controls.Add(this.Insert_User_Name_Txt_box);
+            this.Insertion_Group_Box.Controls.Add(this.Insert_btn);
+            this.Insertion_Group_Box.Controls.Add(this.Insert_Password_Txt_box);
+            this.Insertion_Group_Box.Location = new System.Drawing.Point(62, 56);
+            this.Insertion_Group_Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Insertion_Group_Box.Name = "Insertion_Group_Box";
+            this.Insertion_Group_Box.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Insertion_Group_Box.Size = new System.Drawing.Size(321, 228);
+            this.Insertion_Group_Box.TabIndex = 1;
+            this.Insertion_Group_Box.TabStop = false;
+            this.Insertion_Group_Box.Text = "Insertion";
+            // 
+            // Deletion_Group_Box
+            // 
+            this.Deletion_Group_Box.Controls.Add(this.Delete_Id_Txt_box);
+            this.Deletion_Group_Box.Controls.Add(this.Delete_btn);
+            this.Deletion_Group_Box.Location = new System.Drawing.Point(253, 354);
+            this.Deletion_Group_Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Deletion_Group_Box.Name = "Deletion_Group_Box";
+            this.Deletion_Group_Box.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Deletion_Group_Box.Size = new System.Drawing.Size(281, 186);
+            this.Deletion_Group_Box.TabIndex = 3;
+            this.Deletion_Group_Box.TabStop = false;
+            this.Deletion_Group_Box.Text = "Deletion";
+            // 
+            // Updation_Group_Box
+            // 
+            this.Updation_Group_Box.Controls.Add(this.Update_Id_Txt_box);
+            this.Updation_Group_Box.Controls.Add(this.Update_btn);
+            this.Updation_Group_Box.Controls.Add(this.Update_User_Name_Txt_box);
+            this.Updation_Group_Box.Controls.Add(this.Update_Password_Txt_box);
+            this.Updation_Group_Box.Location = new System.Drawing.Point(438, 59);
+            this.Updation_Group_Box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Updation_Group_Box.Name = "Updation_Group_Box";
+            this.Updation_Group_Box.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Updation_Group_Box.Size = new System.Drawing.Size(325, 230);
+            this.Updation_Group_Box.TabIndex = 2;
+            this.Updation_Group_Box.TabStop = false;
+            this.Updation_Group_Box.Text = "Updation";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(802, 459);
+            this.Controls.Add(this.Updation_Group_Box);
+            this.Controls.Add(this.Deletion_Group_Box);
+            this.Controls.Add(this.Insertion_Group_Box);
+            this.Controls.Add(this.Data_Show_Grid);
+            this.Controls.Add(this.Show_btn);
+            this.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Data_Show_Grid)).EndInit();
+            this.Insertion_Group_Box.ResumeLayout(false);
+            this.Insertion_Group_Box.PerformLayout();
+            this.Deletion_Group_Box.ResumeLayout(false);
+            this.Deletion_Group_Box.PerformLayout();
+            this.Updation_Group_Box.ResumeLayout(false);
+            this.Updation_Group_Box.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button Insert_btn;
+        private System.Windows.Forms.TextBox Insert_User_Name_Txt_box;
+        private System.Windows.Forms.TextBox Insert_Password_Txt_box;
+        private System.Windows.Forms.DataGridView Data_Show_Grid;
+        private System.Windows.Forms.Button Show_btn;
+        private System.Windows.Forms.Button Update_btn;
+        private System.Windows.Forms.TextBox Update_User_Name_Txt_box;
+        private System.Windows.Forms.TextBox Update_Password_Txt_box;
+        private System.Windows.Forms.TextBox Update_Id_Txt_box;
+        private System.Windows.Forms.TextBox Delete_Id_Txt_box;
+        private System.Windows.Forms.Button Delete_btn;
+        private System.Windows.Forms.GroupBox Insertion_Group_Box;
+        private System.Windows.Forms.GroupBox Deletion_Group_Box;
+        private System.Windows.Forms.GroupBox Updation_Group_Box;
+    }
+}
+
+                                                                                                                                                                                                                                                                                                                                              
