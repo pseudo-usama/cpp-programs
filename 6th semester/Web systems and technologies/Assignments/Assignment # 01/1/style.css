@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 3vh 3vw;
+    background: #0F0F0F;
+
+    font-family: sans-serif;
+}
