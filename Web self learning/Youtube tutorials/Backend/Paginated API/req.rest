@@ -1,0 +1,5 @@
+### Users
+GET http://localhost:5000/users?page=1&limit=3
+
+### Posts
+GET http://localhost:5000/posts?page=1&limit=3

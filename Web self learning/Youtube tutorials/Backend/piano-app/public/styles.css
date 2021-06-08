@@ -1,0 +1,94 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #143F6B;
+}
+
+.piano {
+    display: flex;
+}
+
+.key {
+    height: calc(var(--width) * 4);
+    width: var(--width);
+}
+
+.white {
+    --width: 100px;
+    background-color: white;
+    border: 1px solid #333;
+}
+
+.white.active {
+    background-color: #CCC;
+}
+
+.black {
+    --width: 60px;
+    background-color: black;
+    margin-left: calc(var(--width) / -2);
+    margin-right: calc(var(--width) / -2);
+    z-index: 2;
+}
+
+.black.active {
+    background-color: #333;
+}
+
+/* Buttons */
+
+.buttons {
+    display: flex;
+    margin-bottom: 3rem
+}
+
+.btn {
+    --hue: 100;
+    --saturation: 100%;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: hsl(var(--hue), var(--saturation), 50%);
+    color: inherit;
+    font-size: 2rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:first-child {
+    margin-left: 0;
+}
+.song-link {
+    margin-left: 4rem;
+}
+
+.btn:hover, .btn:focus {
+    background: hsl(var(--hue), var(--saturation), 30%);
+}
+
+.record-btn {
+    --hue: 0;
+    --saturation: 0%;
+}
+
+.record-btn.active {
+    --saturation: 100%;
+}
+
+.play-btn, .save-btn,
+.song-link {
+    display: none;
+}
+.play-btn.show,
+.save-btn.show,
+.song-link.show {
+    display: block;
+}

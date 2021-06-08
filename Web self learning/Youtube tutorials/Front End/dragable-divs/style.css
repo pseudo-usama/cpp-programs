@@ -1,0 +1,23 @@
+/*
+    Video Link: https://www.youtube.com/watch?v=jfYWwQrtzzY
+*/
+
+body {
+    margin: 0;
+}
+
+.container {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #333;
+}
+
+.draggable {
+    padding: 1rem;
+    background: white;
+    border: 1px solid black;
+    cursor: move;
+}
+.draggable.dragging {
+    opacity: 0.5;
+}

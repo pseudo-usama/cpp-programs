@@ -1,0 +1,29 @@
+### All subscribers
+GET http://localhost:5000/subscribers
+
+
+### Specific subscriber
+GET http://localhost:5000/subscribers/5e97f6839d5e8b0cd442b50d
+
+
+### INSERT
+POST http://localhost:5000/subscribers
+Content-Type: application/json
+
+{
+    "name": "subscriber name",
+    "subscribedToChannel": "Web deb simplified"
+}
+
+
+### PATCH
+PATCH http://localhost:5000/subscribers/5e97f9ed674b3d16b47c0a5e
+Content-Type: application/json
+
+{
+    "name": "new name"
+}
+
+
+### DELETE
+DELETE http://localhost:5000/subscribers/5e97f6839d5e8b0cd442b50d

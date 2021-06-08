@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mybrary</title>
+
+    <!-- Sheets -->
+    <link rel="stylesheet" href="/css/filepond.min.css">                                                 <!-- https://unpkg.com/filepond/dist/filepond.css -->
+    <link rel="stylesheet" href="/css/filepond-plugin-image-preview.min.css">    <!-- Preview Image -->  <!-- https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css -->
+
+    <link id="main-css" rel="stylesheet" href="/css/main.css">
+
+    <!-- Scripts -->
+    <script defer src="/scripts/filepond-plugin-file-encode.min.js"></script>    <!-- File encode   -->  <!-- https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js      -->
+    <script defer src="/scripts/filepond-plugin-image-preview.min.js"></script>  <!-- Image Preview -->  <!-- https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js  -->
+    <script defer src="/scripts/filepond-plugin-image-resize.min.js"></script>   <!-- Resize Image  -->  <!-- https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js    -->
+    <script defer src="/scripts/filepond.min.js"></script>                                               <!-- https://unpkg.com/filepond/dist/filepond.js                                            -->
+
+    <script defer src="/scripts/fileUpload.js"></script>
+    
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../partials/header') %>
+        <div class="inner-container">
+            <%- include('../partials/error-message') %>
+            <%- body %>
+        </div>
+    </div>
+</body>
+
+</html>

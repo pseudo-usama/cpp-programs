@@ -1,0 +1,324 @@
+/*
+    Video Links:
+        https://www.youtube.com/watch?v=1-jQfGJibzc     (HTML)
+        https://www.youtube.com/watch?v=LLsrgqnFet0     (CSS)
+        https://www.youtube.com/watch?v=KFKF1baf8mY     (CSS)
+        https://www.youtube.com/watch?v=pcYbAzSfC5I     (CSS)
+        https://www.youtube.com/watch?v=MDENx86nK4k     (JS)
+
+    Github:
+        https://github.com/kevin-powell/Mars-Weather-App
+
+    Ditto Copy: Almost (~90)
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-semi: 500;
+    --fw-bold: 700;
+
+    --fs-h1: 1.5rem;
+    --fs-h2: 2.25rem;
+    --fs-body: 1rem;
+    --fs-xl: 4.5rem;
+
+    --clr-light: #FFF;
+    --clr-gray: #989898;
+    --clr-dark: #444;
+    --clr-accent: #D06D6D;
+    --clr-accent-dark: #613131;
+}
+
+.sr-only:not(.focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-image: url('../img/mars.jpg');
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    color: var(--clr-light);
+}
+
+h1, h2, h3 { line-height: 1; }
+a {
+    color: var(--clr-accent);
+
+    &:hover {
+        color: var(--clr-accent-dark);
+    }
+}
+.reading {
+    margin: 0;
+    color: var(--clr-gray);
+    font-size: var(--fs-h1);
+}
+
+.mars-current-weather {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    
+    max-width: 1000px;
+    margin: 0em 0 0 4em;
+    padding: 3em;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.main-title {
+    grid-column: 1 / -1;
+    
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-light);
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    letter-spacing: 2px;
+}
+
+.section-title {
+    margin: 0;
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+}
+
+.section-title-date {
+    font-size: var(--fs-xl);
+}
+
+.date {
+    grid-column: 1 / 2;
+
+    .day {
+        margin: 0;
+        color: var(--clr-gray);
+        font-size: var(--fs-h2);
+        font-weight: var(--fw-light);
+    }
+}
+
+.temp {
+    --border: solid 0.25em var(--clr-accent-dark);
+    
+    grid-column: 2 / 3;
+
+    padding: 0 2em;
+    border-left: var(--border);
+    border-right: var(--border);
+}
+
+.wind {
+    grid-column: 3 / 4;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content 1fr;
+    align-self: start;
+
+    .section-title, .reading {
+        grid-column: 2 / 3;
+    }
+
+    .direction {
+        --size: 5rem;
+
+        grid-row: 1 / span 2;
+
+        display: grid;
+        place-items: center;
+        
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+
+        .arrow {
+            /* Custom Props in JS
+               To update the direction */
+               --direction: 45deg;
+               --size: 0.75rem;
+
+               width: var(--size);
+               height: calc(var(--size) * 3);
+               clip-path: polygon(50% 0, 0 100%, 100% 100%);
+               background: var(--clr-accent-dark);
+
+               transform-origin: center bottom;
+               transform: translateY(-50%) rotate(var(--direction));
+               transition: 300ms;
+        }
+    }
+}
+
+.info {
+    grid-column: 1 / 3;
+}
+
+.unit {
+    grid-column: 3 / 4;
+    place-self: end;
+
+    display: flex;
+    
+    color: var(--clr-light);
+    opacity: 0.7;
+    transition: 300ms opacity linear;
+    
+    &:hover {
+        opacity: 1;
+    }
+
+    label { cursor: pointer; }
+    input { display: none; }
+    .toggle-btn {
+        width: 4em;
+        margin: 0 1em;
+        padding: 0;
+        border: 2px solid var(--clr-light);
+        border-radius: 100vmax;
+        background: transparent;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 1rem;
+            width: 50%;
+            margin: 3px;
+            margin-left: auto;
+            background: var(--clr-light);
+            border-radius: 1rem;
+        }
+    }
+    :checked ~ .toggle-btn::after {
+        margin-left: 3px;
+    }
+}
+
+/* Previous Weather */
+
+.previous-weather {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    padding: 3rem;
+    background: var(--clr-light);
+    color: var(--clr-accent-dark);
+
+    transform: translateY(60%);
+    transition: 350ms ease;
+
+    &.show-weather {
+        transform: translateY(0);
+
+        .show-previous-weather-btn span {
+            transform: rotate(180deg) translateY(-6px);
+        }
+        .previous-weather-title {
+            text-align: left;
+        }
+
+        .previous-weather-title, .previous-day {
+            animation: slide-up-in 750ms forwards;
+        }
+        .previous-day:nth-child(1) { animation-delay: 100ms; }
+        .previous-day:nth-child(2) { animation-delay: 125ms; }
+        .previous-day:nth-child(3) { animation-delay: 150ms; }
+        .previous-day:nth-child(4) { animation-delay: 175ms; }
+        .previous-day:nth-child(5) { animation-delay: 200ms; }
+        .previous-day:nth-child(6) { animation-delay: 225ms; }
+        .previous-day:nth-child(7) { animation-delay: 250ms; }
+    }
+}
+.show-previous-weather-btn {
+    position: absolute;
+    display: block;
+    left: 50%;
+    bottom: 100%;
+    width: 10rem;
+    transform: translate(-50%);
+
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    background: var(--clr-light);
+    color: var(--clr-gray);
+    border: 0;
+    cursor: pointer;
+    
+    font-family: inherit;
+    text-align: center;
+    font-size: var(--fs-h2);
+    line-height: 1;
+
+    &:hover, &:focus {
+        color: var(--clr-dark);
+    }
+
+    & span {
+        display: block;
+        transition: transform 300ms ease;
+    }
+}
+
+.previous-weather-title {
+    text-align: center;
+}
+
+.previous-days {
+    display: flex;
+    justify-content: space-between;   
+}
+
+.previous-day {
+    opacity: 0;
+    transition: opacity 350ms linear;
+
+    & > * {
+        margin: 0;
+    }
+    &-date {
+        color: var(--clr-gray);
+        font-size: 0.9rem;
+    }
+    &-more-info {
+        margin-top: 1rem;
+        padding: 0.3em 1em;
+        border: 0;
+        border-radius: 100vmax;
+        background: var(--clr-dark);
+        color: var(--clr-light);
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover, &:focus {
+            background: var(--clr-gray);
+        }
+    }
+}
+
+
+
+@keyframes slide-up-in {
+    0% {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

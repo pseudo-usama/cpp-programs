@@ -1,0 +1,44 @@
+### [Home] Accessible without login
+GET http://localhost:5000/
+
+
+### [Dashboard] Only accessible with login
+GET http://localhost:5000/dashboard
+Content-Type: application/json
+
+{
+    "userId": 2
+}
+
+### [Admin] Only accessible to Admin
+GET http://localhost:5000/admin
+Content-Type: application/json
+
+{
+    "userId": 2
+}
+
+### [Project] Admin can access all but other users access it's own
+GET http://localhost:5000/projects/
+Content-Type: application/json
+
+{
+    "userId": 2
+}
+
+
+### [Project/id] Admin can access all but other users access it's own
+GET http://localhost:5000/projects/2
+Content-Type: application/json
+
+{
+    "userId": 1
+}
+
+### [Delete] Only delete its own project
+DELETE  http://localhost:5000/projects/2
+Content-Type: application/json
+
+{
+    "userId": 2
+}

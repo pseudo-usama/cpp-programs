@@ -1,0 +1,110 @@
+<!--
+    Video Links:
+        https://www.youtube.com/watch?v=1-jQfGJibzc     (HTML)
+        https://www.youtube.com/watch?v=LLsrgqnFet0     (CSS)
+        https://www.youtube.com/watch?v=KFKF1baf8mY     (CSS)
+        https://www.youtube.com/watch?v=pcYbAzSfC5I     (CSS)
+        https://www.youtube.com/watch?v=MDENx86nK4k     (JS)
+
+    Github:
+        https://github.com/kevin-powell/Mars-Weather-App
+
+    Ditto Copy: Almost (~90)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Weather</title>
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Scripts -->
+    <script defer src="scripts/index.js"></script>
+</head>
+
+<body>
+    <!-- Current Weather -->
+    <main class="mars-current-weather">
+        <h1 class="main-title">Latest weather on Elysium Plantitia</h1>
+
+        <!-- Sol & Date -->
+        <div class="date">
+            <h2 class="section-title section-title-date">
+                Sol
+                <span data-crnt-sol></span>
+            </h2>
+            <p class="day" data-crnt-date></p>
+        </div>
+
+        <!-- Temprature -->
+        <div class="temp">
+            <h2 class="section-title">Temprature</h2>
+            <p class="reading">High: <span data-crnt-high-temp></span> °<span data-temp-unit></span></p>
+            <p class="reading">Low: <span data-crnt-low-temp></span> °<span data-temp-unit></span></p>
+        </div>
+
+        <!-- Wind -->
+        <div class="wind">
+            <h2 class="section-title">Wind</h2>
+            <p class="reading"><span data-wind-speed></span> <span data-speed-unit></span></p>
+
+            <div class="direction">
+                <p class="sr-only" data-wind-direction-text></p>
+                <div class="arrow" data-wind-direction-arrow></div>
+            </div>
+        </div>
+
+        <!-- Some info -->
+        <div class="info">
+            <p>InSight is taking daily weather measurements (temprature, wind, pressure) on the surface of Mars at
+                Elysium Plantitia, a flat, smooth plain near Mar's equator.</p>
+            <p>This is only a part of InSight's mission. <a href="https://mars.nasa.gov/insight/mission/overview">Click
+                    here</a> to find out more.</p>
+        </div>
+
+        <!-- Unit toggler -->
+        <div class="unit">
+            <label for="cel">°C</label>
+            <input type="radio" id="cel" name="unit" checked>
+
+            <button class="toggle-btn" data-toggler></button> <!-- When .unit-toggle clicked checkbox needs to change -->
+
+            <label for="fah">°F</label>
+            <input type="radio" id="fah" name="unit">
+        </div>
+    </main>
+
+    <!-- Previous Weather -->
+    <div class="previous-weather">
+        <button for="weather-toggle" class="show-previous-weather-btn">
+            <span>&#8593;</span>
+            <span class="sr-only">Show previous weather</span>
+        </button>
+
+        <h2 class="main-title previous-weather-title">Previous 7 days</h2>
+
+        <div class="previous-days" data-previous-sols></div>
+
+        <template data-previous-sols-template>
+            <div class="previous-day">
+                <h3 class="previous-day-sol">Sol <span data-sol></span></h3>
+                <p class="previous-day-date" data-date></p>
+    
+                <p class="previous-day-temp">High: <span data-temp-high></span> °<span data-temp-unit></span></p>
+                <p class="previous-day-temp">Low: <span data-temp-low></span> °<span data-temp-unit></span></p>
+    
+                <button class="previous-day-more-info" data-more-info>More info</button>
+            </div>
+        </template>
+    </div>
+</body>
+
+</html>
