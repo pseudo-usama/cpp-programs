@@ -1,0 +1,117 @@
+.navbar-custom{
+position: absolute;
+top: 0px;
+width: 100%;
+}
+
+.navbar a{
+    color: white;
+    font-weight: bold;
+}
+
+.nav li a:hover{
+    background-color: white;
+    color: black;
+}
+
+header{
+    height: 450px;
+    background: black;
+    color: white;
+    padding: 230px 0;
+}
+
+header h1{
+    font-size: 50px;
+    text-shadow: 3px 3px 2px black;
+}
+
+header p{
+    font-size: 20px;
+    text-shadow: 3px 3px 2px black;
+}
+.text-bold{
+    margin: 10px 50px;
+    font-size: 20px;
+}
+
+.types-hack ul li{
+    font-size: 20px;
+    margin: 10px 60px;
+}
+.block-a{
+    font-size: 20px;
+    margin: 20px 0px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 8px 25;
+}
+
+.block-b{
+    font-size: 20px;
+    margin: 20px 0px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 8px 25;
+    background: #f1f1f1;
+}
+
+.block-c{
+    font-size: 20px;
+    margin: 20px 0px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 8px 25;
+}
+
+.block-d{
+    font-size: 20px;
+    margin: 20px 0px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 8px 25;
+    background: #f1f1f1;
+}
+
+.block-e{
+    font-size: 20px;
+    margin: 20px 0px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 8px 25;
+}
+
+.block-f{
+    font-size: 20px;
+    margin: 20px 0px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 8px 25;
+    background: #f1f1f1;
+}
+
+.block-g{
+    font-size: 20px;
+    margin: 20px 0px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 8px 25;
+}
+
+.footer{
+    width: 100%; 
+    padding: 20px 0; 
+    background: black; 
+    color: black;
+    background: grey;
+}
+
+.thumbnail img{
+    height: 250px;
+    width: 300px;
+}
+
+.quotes ul li{
+    font-size: 15px;
+    margin: 10px 80px;
+}

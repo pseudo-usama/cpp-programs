@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Loader</title>
+    <style media="screen">
+      .loader{
+        /*Postion Loader*/
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -75px 0px 0px -75px;
+        z-index: 1;
+        /*Border Loader*/
+        border: 16px solid white;
+        border-radius: 50%;
+        border-top: 16px double green;
+        /*Size Loader*/
+        width: 150px;
+        height: 150px;
+
+        /*Animation*/
+        -webkit-animation : 2s spin linear infinite;
+        animation: 2s spin linear infinite;
+      }
+      @-webkit-keyframes spin{
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+      }
+      @keyframes spin{
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+      }
+
+      /*Animation to Bottom Page*/
+      .next_to_loader{
+        position: relative;
+        -webkit-animation-name:bottompage;
+        -webkit-animation-duration:1s;
+        animation-name: bottompage;
+        animation-duration: 1s;
+      }
+      @-webkit-keyframes bottompage {
+        from {bottom: -100px;opacity: 0;}
+        to {bottom: 0px;opacity: 1;}
+      }
+      @keyframes bottompage {
+        from {bottom: -100px;opacity: 0;}
+        to {bottom: 0px;opacity: 1;}
+      }
+      #page{
+        display: none;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body onload="loadpage();">
+    <div class="loader" id="loaderid"></div>
+
+    <div class="next_to_loader" id="page">
+      <h1> Hello GUL</h1>
+    </div>
+
+    <script type="text/javascript">
+    var myVar;
+
+    function loadpage() {
+      myVar = setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+      document.getElementById("loaderid").style.display = "none";
+      document.getElementById("page").style.display = "block";
+    }
+    </script>
+  </body>
+</html>
