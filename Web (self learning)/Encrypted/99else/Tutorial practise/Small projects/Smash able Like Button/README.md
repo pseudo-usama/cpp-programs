@@ -1,0 +1,1 @@
+See project on Web Dev Simplefied Github [repo](https://github.com/WebDevSimplified/Smash-The-Like-Button).

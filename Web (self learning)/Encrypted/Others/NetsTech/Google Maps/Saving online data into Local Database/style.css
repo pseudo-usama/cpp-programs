@@ -1,0 +1,107 @@
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       /* Optional: Makes the sample page fill the window. */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+#map {
+    height: 100%;
+    width: 80%;
+    float: left;
+    transition: 0.5s;
+}
+
+/* Side Bar Styling */
+
+#side-bar {
+    position: relative;
+    height: 100%;
+    width: 20%;
+    float: left;
+    box-shadow: 5px 0 50px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: 0.5s;
+}
+    #side-bar button {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        transform: translateX(100%);
+        padding: 15px 10px;
+        background: #FCFCFC;
+        z-index: 10;
+        font-size: 20px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+
+/* Check Box Styling */
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
+
+
+#options {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 0 5px 5px;
+    overflow: hidden;
+    background: #4285F4;
+}
+    #options p {
+        margin: 0 0 0 15px;        
+        font-size: 25px;
+        font-weight: normal;
+        color: #ddd;
+    }
+
+    #option-table td {
+        /* padding: 0 5px; */
+    }
+
+    .chk-box {
+        display: inline;
+        color: #383A3F;
+        cursor: pointer;
+        font-size: 20px;
+    }
+        .chk-box input {
+            display: none;
+        }    
+            .chk-box span {
+                font-size: 1vw !important;
+            }
+            .chk-box span:before {
+                content: "";
+                color: #dddfe6;
+                font-family: "fontAwesome";
+                line-height: 1;
+                width: 1em;
+                display: inline-block;
+                margin-right: 5px;
+            }
+            .chk-box input:checked+span:before {
+                content: "";
+                color: rgb(157, 190, 243);
+                animation: tick 150ms ease-in;
+            }
+            .chk-box span:hover:before {
+                color: rgb(157, 190, 243);
+            }
+
+    @keyframes tick {
+        0% {
+            transform: scale(0);
+        }
+        90% {
+            transform: scale(1.3);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
