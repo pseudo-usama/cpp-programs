@@ -1,0 +1,32 @@
+#dropdownItem {
+  position: relative;
+  #dropdownMenu {
+    padding: 8px;
+    display: none;
+    background: $secondray-color;
+    color: white;
+    width: max-content;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 1px 3px 20px rgb(92, 88, 92);
+    h1 {
+      text-transform: initial;
+    }
+  }
+}
+.active {
+  background: $secondray-color;
+  color: white;
+}
+.d-block {
+  display: block !important;
+}
+.User {
+  border-radius: 5px;
+  display: block;
+  padding: 0.45em 0.3rem;
+  margin: 0.5rem 0 0 0;
+}

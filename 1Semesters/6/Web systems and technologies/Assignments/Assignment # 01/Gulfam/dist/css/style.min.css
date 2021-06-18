@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+h1 {
+    text-transform: lowercase
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto
+}
+
+.display-1 {
+    font-size: 4rem;
+    font-weight: 100
+}
+
+.app {
+    width: 100%;
+    background: url("../../assets/images/Texture-1.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2
+}
+
+body {
+    width: 100%
+}
+
+header {
+    padding: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+header h1 {
+    color: #eaddca
+}
+
+.img-container {
+    display: block;
+    width: 100%;
+    background: transparent
+}
+
+.img-container>img {
+    width: 100%
+}
+
+.header-img {
+    max-height: 60vh;
+    overflow: hidden;
+    min-height: 100%
+}
+
+.r-1 {
+    border-radius: 5px
+}
+
+.r-2 {
+    border-radius: 10px
+}
+
+.my-1 {
+    margin: 1rem 0
+}
+
+nav {
+    width: 100%;
+    border-radius: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
+    justify-content: left;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#eaddca), color-stop(#e6d6bb), color-stop(#e2cfad), color-stop(#ddc89e), color-stop(#d8c290), color-stop(#d8c290), color-stop(#ddc89e), color-stop(#e2cfad), color-stop(#e6d6bb), to(#eaddca));
+    background-image: linear-gradient(to bottom, #eaddca, #e6d6bb, #e2cfad, #ddc89e, #d8c290, #d8c290, #ddc89e, #e2cfad, #e6d6bb, #eaddca)
+}
+
+nav>a {
+    text-decoration: none;
+    font-size: 1.05rem;
+    color: black;
+    padding: 1rem 1.5rem;
+    -webkit-transition: 0.5s background ease-out;
+    transition: 0.5s background ease-out
+}
+
+nav>a:first-child {
+    margin-left: 1rem
+}
+
+nav>a:hover {
+    background: #917a5d;
+    color: white
+}
+
+main {
+    width: 100%;
+    display: block;
+    background: #000;
+    color: #eaddca
+}
+
+.row {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row
+}
+
+.row>div {
+    margin: 3rem 2rem
+}
+
+.row .col-4 {
+    -webkit-box-flex: 1.5;
+    -ms-flex: 1.5;
+    flex: 1.5
+}
+
+.row .col-6 {
+    -webkit-box-flex: 4;
+    -ms-flex: 4;
+    flex: 4
+}
+
+.left-box h1 {
+    font-size: 1.8rem;
+    font-weight: 100;
+    margin: 1rem 0
+}
+
+.left-box p {
+    font-size: .7rem;
+    text-align: justify;
+    line-height: 1rem
+}
+
+.left-box a {
+    display: block
+}
+
+.top-text {
+    width: 100%
+}
+
+.link {
+    display: block;
+    width: 100%
+}
+
+.link a {
+    color: #917a5d;
+    line-height: 1.7rem
+}
+
+.link a:hover {
+    opacity: 0.7
+}
+
+.right-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly
+}
+
+.right-box .post {
+    display: block;
+    width: 100%
+}
+
+.right-box .post h1 {
+    font-size: 1.9rem;
+    font-weight: 100
+}
+
+.right-box .post h6 {
+    font-size: x-small;
+    word-spacing: .2rem
+}
+
+.right-box .post a {
+    color: #917a5d;
+    letter-spacing: .05rem
+}
+
+.right-box .post a:hover {
+    opacity: 0.7
+}
+
+.right-box .post p {
+    font-size: .7rem;
+    text-align: justify;
+    line-height: 1.2rem
+}
+
+.right-box .post .post-header {
+    margin: 2rem 0
+}
+
+footer {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 10vh;
+    color: #eaddca
+}

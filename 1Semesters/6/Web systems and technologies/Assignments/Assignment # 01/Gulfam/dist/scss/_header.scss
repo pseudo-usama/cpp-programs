@@ -1,0 +1,40 @@
+header {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    h1 {
+        color: $primary-color;
+    }
+
+}
+
+.img-container {
+    display: block;
+    width: 100%;
+    background: transparent;
+
+    >img {
+        width: 100%;
+    }
+}
+
+.header-img {
+    max-height: 60vh;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.r-1 {
+    border-radius: 5px;
+}
+
+.r-2 {
+    border-radius: 10px;
+}
+
+.my-1 {
+    margin: 1rem 0;
+}

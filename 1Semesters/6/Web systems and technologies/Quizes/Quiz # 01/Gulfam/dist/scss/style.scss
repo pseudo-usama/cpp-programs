@@ -1,0 +1,78 @@
+// @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
+body {
+  //   display: none;
+
+  background-image: url('../../assets/Texture-2.jpg');
+  background-position: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+h6 {
+  color: #eaddca;
+}
+
+a {
+  color: #917a5d;
+  font-size: 0.9rem;
+}
+
+.rounded {
+  border-radius: 10px !important;
+}
+
+/* Header Images */
+.header-img {
+  max-height: 450px;
+}
+
+// Links Section
+
+.links {
+  a {
+    margin: 0.3rem 0;
+  }
+}
+
+// Post Section
+
+.post {
+  text-align: justify;
+
+  h1 {
+    margin: 0;
+  }
+
+  &-detail {
+    font-size: 0.8rem;
+
+    a {
+      font-size: 0.7rem;
+    }
+  }
+}
+// Configration
+
+.container {
+  width: 80%;
+}
+// Navbar
+nav {
+  background-image: linear-gradient(
+    to right bottom,
+    #eaddca,
+    #e6d6bb,
+    #e2cfad,
+    #ddc89e,
+    #d8c290,
+    #d8c290,
+    #ddc89e,
+    #e2cfad,
+    #e6d6bb,
+    #eaddca
+  );
+}

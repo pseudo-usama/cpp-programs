@@ -1,0 +1,37 @@
+nav {
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+    align-items: center;
+    background-image: linear-gradient(to bottom,
+            #eaddca,
+            #e6d6bb,
+            #e2cfad,
+            #ddc89e,
+            #d8c290,
+            #d8c290,
+            #ddc89e,
+            #e2cfad,
+            #e6d6bb,
+            #eaddca);
+
+    >a {
+        text-decoration: none;
+        font-size: 1.05rem;
+        color: black;
+        padding: 1rem 1.5rem;
+        transition: 0.5s background ease-out;
+
+        &:first-child {
+            margin-left: 1rem;
+        }
+
+        &:hover {
+            background: $secondray-color;
+            color: white;
+        }
+    }
+}
