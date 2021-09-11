@@ -1,32 +1,33 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
-using System.Threading;     // Used for Sleep();
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace Tic_tac_toe
+namespace Tic_Tac_Toe
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.CursorVisible = false;      // Hiding the cursor from console
+            Console.CursorVisible = false;
             TicTacToe ob = new TicTacToe();
             ob.StartGame();
         }
     }
 
-    // This class contains all the functions and attributes which
-    // controls the whole game automatically
     class TicTacToe
     {
         private bool turn;                      // To switch between 2 Players
-        private int Player1Wining;              // Winings of 1st Player
-        private int Player2Wining;              // Winings of 2nd Player
+        private int Player1Wining;
+        private int Player2Wining;
         private bool TwoPlayers;                // Tell wheather game is one player or two player
         private int Draws;                      // Total no. to Draw matches
         private string[] data = new string[9];  // Saves the states of match
+
+        private SoundPlayer sound = new SoundPlayer();     // For playing sounds
 
         private void GameControler()    // This controls all the game
         {
@@ -40,7 +41,7 @@ namespace Tic_tac_toe
                     {
                         char choice = Convert.ToChar(Console.ReadKey().KeyChar.ToString()); // Capturing user pressed key
 
-                        if (choice > '0' && choice <= '9')      // Checks wheather user press a valid key
+                        if (choice > '0' && choice <= '9')
                         {
                             if (data[choice - '1'] == choice.ToString())    // Check wheather the selected box is empty
                             {
@@ -65,6 +66,9 @@ namespace Tic_tac_toe
                     }
                 }
 
+                sound.SoundLocation = Environment.CurrentDirectory + (turn ? "/tic.wav" : "/toc.wav");  // Sets the Audio File path
+                sound.Play();
+
                 turn = !turn;   // Toggle the player
                 if (i > 4 && this.IsWin())  // Checks either any player won the game
                 {
@@ -79,7 +83,7 @@ namespace Tic_tac_toe
                     else/*****/ {/************/ this.Print(false, false); }
                 }
             }
-        }   // End GameControler()
+        }
 
         private bool IsWin()    // Checks wheather any player won
         {
@@ -98,7 +102,7 @@ namespace Tic_tac_toe
             else if (this.data[0] == this.data[4] && this.data[4] == this.data[8]) return true;     // 1 diagnol
             else if (this.data[2] == this.data[4] && this.data[4] == this.data[6]) return true;     // 2 diagnol
             else return false;  // No one win
-        }   // End IsWin()
+        }
 
         private int MakeChoice()    // In one player mode this function make choices
         {
@@ -166,7 +170,7 @@ namespace Tic_tac_toe
             else if (this.data[4] == "5") return 4;
             else if (this.data[5] == "6") return 5;
             else/***********************/ return 7;
-        }   // End MakeChoice()
+        }
 
         public void StartGame()     // This provides the menu to user
         {
@@ -179,7 +183,6 @@ namespace Tic_tac_toe
             {
                 Console.Clear();
 
-                // Print the Menu to user
                 Console.WriteLine(@"
        ╔═════════════════════════════════════════════════╗
        ║ ╔═════════════════════════════════════════════╗ ║
@@ -206,7 +209,7 @@ namespace Tic_tac_toe
        ╚═════════════════════════════════════════════════╝
                 ");
 
-                option = Console.ReadKey().KeyChar;     // Captures the pressed key
+                option = Console.ReadKey().KeyChar;
 
                 if/***/ (option == '1') this.TwoPlayers = false;
                 else if (option == '2') this.TwoPlayers = true;
@@ -229,9 +232,9 @@ namespace Tic_tac_toe
                 else if (option == 'r' || option == 'R')
                     goto restart;
 
-                option = Console.ReadKey().KeyChar;     // Captures the pressed key
+                option = Console.ReadKey().KeyChar;
             } while (true);
-        }   // End StartGame()
+        }
 
         private void Print(bool isWon, bool isDraw)  // This prints the game in console
         {
@@ -274,7 +277,7 @@ namespace Tic_tac_toe
                 Console.WriteLine("Press the Coresponding button to mark");
                 Console.WriteLine("Press 'E' for exit.");
             }
-        }   // End Print()
+        }
 
         private void ResetAttributes(bool CompleteReset)    // This initialize and resets the attributes
         {
@@ -294,6 +297,6 @@ namespace Tic_tac_toe
             data[6] = "7";
             data[7] = "8";
             data[8] = "9";
-        }   // End ResetAttributes()
-    }   // End class TicTacToe
+        }
+    }
 }
