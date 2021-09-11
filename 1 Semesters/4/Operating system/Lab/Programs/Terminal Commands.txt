@@ -1,0 +1,19 @@
+  GNU nano 2.9.3                                                                              Terminal_Commands.txt                                                                               Modified  
+
+pwd                        ---------(Print working Directory)-------------------  Print the current folder name
+ls                         ---------(List)--------------------------------------  List the folder contents
+cd folder_name             ---------(Change Directory)--------------------------  Move to mentioned Directory
+cd..                       ---------(Change Directory)--------------------------  Move to Previous Directory
+cd /                       ---------(Change Directory)--------------------------  Move to Root Directory
+touch file_name            -----------------------------------------------------  Create a file
+cat >                      -----------------------------------------------------  Use to Rewrite a file (to save and exit file use Ctrl + Z)
+cat file_name              -----------------------------------------------------  Use to Read a file
+cat >>                     -----------------------------------------------------  Use to Edit a file (to save and exit file use Ctrl + Z)
+cp file_name paste_location---------(Copy)--------------------------------------  To copy a file to mentioned location
+rm file_name               ---------(Remove File)-------------------------------  Remove File (Note: The file will permanently Delete)
+mkdir folder_name          ---------(Make Directory)----------------------------  Create new Directory
+rmdir folder_name          ---------(Remove Directory)--------------------------  Remove Empty Directory (Note: The Directory wil permanently Delete)
+rm -r folder_name          ---------(Romove Directory)--------------------------  Romeve non-Empty Directory (Note: The Directory will permanentyl Delete)
+man command                -----------------------------------------------------  See help for any terminal command
+clear                      -----------------------------------------------------  Clear the terminal secreen
+

@@ -1,0 +1,16 @@
+# Comparison Operators
+
+	# -eq Equal
+	# -ne Not equal
+	# -lt Less than
+	# -gt Greater than
+	# -le Less than or equal
+	# -ge Greater than or equal
+
+
+
+# Logical Operators
+
+	# -a And
+	# -o Or
+	# !  Not

@@ -1,0 +1,18 @@
+How to install g++ Compiler run following commands in terminal
+	sudo apt-get update && sudo apt-get upgrade
+
+	apt-cache search compiler
+
+	dpkg --list | grep compiler
+
+1) To install c++ compiler
+	sudo apt-get install g++
+
+2) To create file in text editor in ubuntu
+	gedit filename.cpp
+
+3) To compile Program
+	g++ fiename.cpp -o output_file_name
+
+4) To execute program
+	./output filename

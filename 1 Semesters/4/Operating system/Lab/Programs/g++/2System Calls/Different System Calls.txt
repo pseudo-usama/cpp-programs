@@ -1,0 +1,5 @@
+ftok (path, id)				return unique key
+shmget (key, size, shmflag)		return shared memory ID
+shmat (shmID, *shmodd, shmflag)		return address
+shmdt (*shmadd)				detach from shm
+shmctl (shmid, IPC_RMID, NULL)		destroy shared memory

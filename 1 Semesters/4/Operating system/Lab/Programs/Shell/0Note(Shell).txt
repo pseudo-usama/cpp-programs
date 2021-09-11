@@ -1,0 +1,10 @@
+Before run the program file in terminal we have to change file mood.
+To change the mood write this command.
+
+	chmod +x file_name.sh
+
+
+
+Now you run the program in terminal using this command.
+
+	./file_name.sh
