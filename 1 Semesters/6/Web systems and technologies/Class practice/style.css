@@ -1,0 +1,68 @@
+.main {
+			width: 960px;
+			height: 250px;
+			background-color: #930;
+			margin: 0 auto;
+		}
+
+		.header {
+			width: 960px;
+			height: 250px;
+			background-color: #F30;
+		}
+
+		.box {
+			width: 33%;
+			height: 250px;
+			float: left;
+		}
+
+		.leftheader {
+			width: 30%;
+			height: 250px;
+			float: left;
+		}
+
+		.rightheader {
+			width: 70%;
+			height: 250px;
+			float: left;
+		}
+
+		.righttop {
+			width: 444px;
+			height: 67px;
+			background-color:
+				hotpink;
+			margin-left: 140px;
+			margin-top: 26px;
+		}
+
+		.logo {
+			height: 150px;
+			width: 150px;
+			background-color: chartreuse;
+			margin: 35px;
+			padding: 20px;
+		}
+
+		.menu {
+			width: 150px;
+
+			height: 35px;
+
+			background-color:
+				chocolate;
+
+			margin-top: 10px;
+
+			margin-left: 63px;
+
+            border-radius: 12px;
+ 
+
+border: 5px solid
+blue;
+		}
+
+		#myid {}
