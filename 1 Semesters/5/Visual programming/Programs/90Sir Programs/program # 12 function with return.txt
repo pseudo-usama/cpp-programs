@@ -1,0 +1,18 @@
+ class myfirstp {
+        public int maxi(int x, int y) {
+           int a, b, c;
+            a = x; 
+            b = y;
+            c = a + b;
+            return c;
+        //    Console.WriteLine("this is a method {0}",c);
+        }
+        static void Main(string[] args) {
+            myfirstp my = new myfirstp();
+            int total;
+            total=my.maxi(10,5);
+            Console.WriteLine("the total is = {0}",total);
+         
+            Console.ReadKey();
+        }
+    }

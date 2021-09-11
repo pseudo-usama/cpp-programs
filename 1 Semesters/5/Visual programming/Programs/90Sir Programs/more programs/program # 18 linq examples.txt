@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] myarr = new int[] { 4, 6, 5, 3,8, 9,15,-3,14 };
+
+            var query = from n in myarr where (n % 2==0) where n>7  select n;
+            foreach (int k in query) {
+                Console.WriteLine("{0}", k);
+            }
+            Console.WriteLine("second query order by to sort in asending order with multi condition");
+            var query2 = from n in myarr orderby n where n>7 where (n%2==0)select n;
+            foreach (int k in query2)
+            {
+                Console.WriteLine("{0}", k);
+            }
+            Console.WriteLine("third query order by to sort in desending order");
+            var query3 = from n in myarr orderby n descending select n;
+            foreach (int k in query3)
+            {
+                Console.WriteLine("{0}", k);
+            }
+            Console.WriteLine("4th query positive and lessthan 12");
+            var query4 = from n in myarr where n>0 where n<12 select n;
+            foreach (int k in query4)
+            {
+                Console.WriteLine("{0}", k);
+            }
+            Console.WriteLine("5th query square and more than 15");
+            var query5 = from int n in myarr let sqrn=n*n where sqrn > 12 select sqrn;
+            foreach (int k in query5)
+            {
+                Console.WriteLine("{0}", k);
+            }
+            
+            Console.ReadLine();
+        }
+    }
+}

@@ -1,0 +1,17 @@
+using System;
+namespace myfirstprogram {
+    class myfirstp {
+      
+        static void Main(string[] args) {
+           
+            int[,] myarray = new int[2,3]{{4,2,5},{3,3,5}};
+
+            for (int i = 0; i <2; i++)
+                for (int j = 0; j < 3; j++ )
+                    Console.WriteLine(myarray[i,j]);
+
+           
+            Console.ReadKey();
+        }
+    }
+}

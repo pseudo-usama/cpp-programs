@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class myclass {
+        public int no;
+        public int no2;
+        public int sum;
+        public void myfunset1(){
+            no = 5;
+        }
+        public void myfunset2()
+        {
+            no2 = 15;
+        }
+        public int add() {
+            sum = no + no2;
+            return sum;
+        
+        }
+        public void myfunget() {
+            Console.WriteLine("the value is {0}", sum);
+        }
+    
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            myclass obj = new myclass();
+         obj.myfunset1();
+         obj.myfunset2();
+         int s;
+            s=obj.add();
+         obj.myfunget();
+         Console.WriteLine("the value is {0}", s);
+            Console.ReadLine();
+        }
+    }
+}

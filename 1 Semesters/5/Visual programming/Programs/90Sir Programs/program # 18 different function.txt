@@ -1,0 +1,30 @@
+using System;
+namespace myfirstprogram {
+    class sumclass {
+        public int n1;
+        public int n2;
+        public int total;
+
+        public void getval() {
+            n1 = 5;
+            n2 = 20;
+        }
+
+        public void add(){
+            total = n1 + n2;
+        }
+        public void show() {
+            Console.WriteLine("The sum of the two variable is {0}",total);
+        }
+    }
+    class myfirstp {
+        static void Main(string[] args) {
+            sumclass s = new sumclass();
+            s.getval();
+            s.add();
+            s.show();
+           
+                Console.ReadKey();
+        }
+    }
+}

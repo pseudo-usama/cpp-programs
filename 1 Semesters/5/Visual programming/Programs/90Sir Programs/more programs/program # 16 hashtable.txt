@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Hashtable myhash = new Hashtable();
+            myhash.Add("1", "ali");
+            myhash.Add("2", "ali2");
+            myhash.Add("3", "ali3");
+            myhash.Add("4", "ali4");
+
+            ICollection key = myhash.Keys;
+            foreach (string k in key) {
+                Console.WriteLine(k + " " + myhash[k] );
+            }
+            Console.ReadKey();
+        }
+    }
+}

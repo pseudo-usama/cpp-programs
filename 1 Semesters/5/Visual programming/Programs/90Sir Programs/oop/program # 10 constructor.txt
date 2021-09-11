@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace ConsoleApplication1
+{
+    class shape
+    {
+        protected int height;
+        protected int width;
+        shape(int h, int w)
+        {
+            height = h;
+            width = w;
+        }
+        public void getvalue()
+        {
+        }
+
+    }
+    class rectangle : shape
+    {
+        public double area;
+        public rectangle(int h, int w) : base(h, w) { }
+
+        public double getarea()
+        {
+            area = height * width;
+            return area;
+        }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            rectangle obj = new rectangle(10, 20);
+            double totalarea = obj.getarea();
+            Console.WriteLine("The total area is {0}", totalarea);
+            Console.ReadLine();
+        }
+    }
+}

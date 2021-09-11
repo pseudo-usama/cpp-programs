@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void myfun() {
+ //           x = 10;
+            Console.WriteLine("the value of x in the function");
+        }
+        static void myfun(int x)
+        {
+ 
+            Console.WriteLine("the value of x in the function {0}", x);
+        }
+        static void mytext() {
+            Console.WriteLine("this is my text");
+        }
+        static void Main(string[] args)
+        {
+            int a;
+            myfun();
+            myfun(10);
+   //         Console.WriteLine("the value of a is {0}", a);
+
+            Console.ReadKey();
+        }
+    }
+}

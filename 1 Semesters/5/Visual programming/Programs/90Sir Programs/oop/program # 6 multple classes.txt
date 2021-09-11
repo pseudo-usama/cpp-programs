@@ -1,0 +1,46 @@
+//program class
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using myproject.com.mydata;
+
+namespace myproject
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            studentclass obj= new studentclass();
+            obj.rollno=20;
+            obj.marks=80;
+            obj.details();
+
+
+            Console.ReadLine();
+        }
+    }
+}
+
+// student class
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace myproject.com.mydata
+{
+    class studentclass
+    {
+        public int marks;
+        public int rollno;
+
+
+        public void details() {
+            Console.WriteLine("roll # = {0}, marks = {1}", rollno, marks);
+        
+        }
+    }
+}

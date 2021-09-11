@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class myclass {
+
+        public int x ;
+        public myclass(int y){
+            x = 50;
+        
+        }
+        public myclass(myclass obj3)
+        {
+
+            Console.WriteLine("the value of constructor is {0}", x);
+        }
+
+        public void myfun(){
+        Console.WriteLine("the value is {0}",x);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           myclass obj = new myclass(10);
+           myclass obj2 = new myclass(obj);
+            obj.myfun();
+            obj2.myfun();    
+
+           Console.ReadLine();
+        }
+    }
+}

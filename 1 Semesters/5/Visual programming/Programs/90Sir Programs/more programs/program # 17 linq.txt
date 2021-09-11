@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[] { 2, 4, 3, 4, 5, 3 };
+            
+            var x= from no in arr where no > 3 select no;
+
+            foreach(var element in x){
+                Console.WriteLine(element);
+            
+            }
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList mylist= new ArrayList();
+            mylist.Add(5);
+            mylist.Add(6.4);
+            mylist.Add("7");
+            mylist.Add("ali");
+            mylist.Add(true);
+            foreach (var n in mylist) {
+
+                Console.WriteLine("{0}", n);
+            }
+            Console.WriteLine("added new values");
+            mylist.Insert(2, "ahmed");
+            foreach (var n in mylist)
+            {
+
+                Console.WriteLine("{0}", n);
+            }
+            Console.WriteLine("Remove values");
+            mylist.Remove(5);
+            foreach (var n in mylist)
+            {
+
+                Console.WriteLine("{0}", n);
+            }
+            Console.WriteLine("Remove values at specific location");
+            mylist.RemoveAt(4);
+            foreach (var n in mylist)
+            {
+
+                Console.WriteLine("{0}", n);
+            }
+            Console.ReadKey();
+        }
+    }
+}

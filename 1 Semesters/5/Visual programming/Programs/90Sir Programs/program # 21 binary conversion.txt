@@ -1,0 +1,6 @@
+  int value = 26;
+            string binary = Convert.ToString(value, 2);
+            Console.WriteLine("binary = {0}",binary);
+            string s = Console.ReadLine();
+            int b = Convert.ToInt32(s, 2);
+            Console.WriteLine("Input value in base 10 = " + b);

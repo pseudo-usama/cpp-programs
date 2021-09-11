@@ -1,0 +1,19 @@
+using System;
+namespace myfirstprogram {
+    class sum {
+        public int n1;
+        public int n2;
+    }
+    class myfirstp {
+        static void Main(string[] args) {
+            sum show = new sum();
+            show.n1 = 10;
+            show.n2 = 4;
+            int total;
+            total = show.n1 + show.n2;
+            Console.WriteLine(total);
+           
+                Console.ReadKey();
+        }
+    }
+}

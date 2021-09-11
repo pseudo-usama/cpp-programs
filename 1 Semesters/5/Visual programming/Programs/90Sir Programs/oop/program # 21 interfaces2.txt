@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    interface animalinterface {
+        void sound();
+    }
+    interface animalwalk
+    {
+        void walk();
+    }
+    public class dogclass:animalinterface {
+        public void sound() {
+            Console.WriteLine("This is the dog sound");
+        }
+        public void walk() {
+            Console.WriteLine("dog is walking");
+        }
+    }
+
+    public class tigerclass : animalinterface
+    {
+        public void sound()
+        {
+            Console.WriteLine("This is the tiger sound");
+        }
+    }
+    public class catclass : animalinterface
+    {
+        public void sound()
+        {
+            Console.WriteLine("This is the cat sound");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            tigerclass obj = new tigerclass();
+            obj.sound();
+            catclass obj2 = new catclass();
+            obj2.sound();
+            dogclass obj3 = new dogclass();
+            obj3.sound();
+
+            Console.ReadLine();
+        }
+    }
+}

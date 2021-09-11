@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    abstract class rebort {
+        public abstract void show();
+        }
+    class car : rebort
+    {
+        public override void show() {
+            Console.WriteLine("car run");
+        }
+    }
+    class boat : rebort
+    {
+         public override void show() {
+            Console.WriteLine("boat run");
+        }
+    }
+    class helicopter : rebort
+    {
+        public override void show()
+        {
+            Console.WriteLine("helicopter run");
+       }
+      }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            rebort obj = new car();
+            obj.show();
+            obj = new boat();
+            obj.show();
+            obj = new helicopter();
+            obj.show();
+       
+            Console.ReadLine();
+        }
+    }
+}

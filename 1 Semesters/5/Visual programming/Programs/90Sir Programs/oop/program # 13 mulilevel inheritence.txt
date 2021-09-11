@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class child {
+        protected int x;
+        protected int y;
+
+        public child() {
+              Console.WriteLine("child class ");
+        }
+    }
+    class child2:child
+    {
+        protected int k;
+        protected int j;
+
+        public child2()
+        {
+            Console.WriteLine("child class2");
+        }
+    }
+        class parent:child2 {
+        public parent() {
+
+            Console.WriteLine("parent class");
+        
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            parent obj = new parent();
+
+            Console.ReadLine();
+        }
+    }
+}

@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+public delegate int sum(int x, int y);
+namespace ConsoleApplication1
+{
+    
+    class Program
+    { 
+        private static int add(int a, int b){
+        int sum;
+        sum= a+b;
+        return sum;
+}   
+
+        static void Main(string[] args)
+        {
+            sum obj= new sum(add);
+            int result= obj(10,5);
+            Console.WriteLine("the result is {0}", result);
+            Console.ReadLine();
+        }
+    }
+}

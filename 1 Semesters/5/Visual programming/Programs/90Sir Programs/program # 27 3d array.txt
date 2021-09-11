@@ -1,0 +1,21 @@
+int [,,] arr= new int [2,2,4];
+
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    for (int k = 0; k < 4; k++)
+                    {
+                        Console.WriteLine("Enter data in 3 d array {0},{1},{2}",i,j,k);
+                      
+                        arr[i, j, k]=Convert.ToInt32(Console.ReadLine());
+                    }
+                }
+            }
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 2; j++) {
+                    for (int k = 0; k < 4; k++){
+                        Console.WriteLine("{0}", arr[i,j,k]);
+                    }
+                }
+            }

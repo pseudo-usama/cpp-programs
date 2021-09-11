@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class myclass
+    {
+        public int a;
+        public int b;
+        public int sum;
+
+        public void get()
+        {
+            Console.WriteLine("enter value of a ");
+            a = Convert.ToInt32(Console.ReadLine());
+          
+        }
+        public int show()
+        {
+//            sum = a + b;
+               Console.WriteLine("the result is ", sum);
+            return sum;
+        }
+        public static myclass operator +(myclass x, myclass y)
+        {
+            myclass c = new myclass();
+            c.sum = x.a + y.a;
+            return c;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            myclass obj1 = new myclass();
+            myclass obj2 = new myclass();
+            myclass total = new myclass();
+            obj1.get();
+            obj2.get();
+            total = obj1 + obj2;
+            Console.WriteLine("the result is {0}", total.sum);
+           // Console.WriteLine("the result is {0}", sum.show());
+            Console.ReadLine();
+        }
+    }
+}

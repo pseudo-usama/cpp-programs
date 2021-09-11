@@ -1,0 +1,44 @@
+using System;
+
+namespace Tutlane
+{
+    class User
+    {
+        // private Constructor
+        private User()
+        {
+            Console.WriteLine("I am Private Constructor");
+         }
+        public static string name, location;
+        // Default Constructor
+        public User(string a, string b)
+        {
+            name = a;
+            location = b;
+        }
+    }
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            // The following comment line will throw an error because constructor is inaccessible
+
+           // User user = new User();
+            
+            // Only Default constructor with parameters will invoke
+
+            User user1 = new User("ali ahmed", "lahore");
+
+            Console.WriteLine(User.name + ", " + User.location);
+
+            Console.WriteLine("\nPress Enter Key to Exit..");
+
+            Console.ReadLine();
+
+        }
+
+    }
+
+}

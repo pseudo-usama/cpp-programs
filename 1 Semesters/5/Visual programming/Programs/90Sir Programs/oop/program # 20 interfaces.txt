@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    interface myfirstinterface {
+        void show();
+        void show3();
+    }
+    interface mysecondinterface
+    {
+        void show2();
+    }
+    public class abc:myfirstinterface,mysecondinterface {
+        public void myfun() {
+            Console.WriteLine("This is the main class");
+        }
+        public void show() {
+            Console.WriteLine("This is the inteface");
+        }
+        public void show2()
+        {
+            Console.WriteLine("This is the inteface2");
+        }
+        public void show3()
+        {
+            Console.WriteLine("This is the inteface2");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            abc obj = new abc();
+            obj.myfun();
+            obj.show();
+            obj.show2();
+            obj.show3();
+            Console.ReadLine();
+        }
+    }
+}

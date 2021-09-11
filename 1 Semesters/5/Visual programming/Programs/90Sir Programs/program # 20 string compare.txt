@@ -1,0 +1,7 @@
+            string a,b;
+            int c;
+            a="ab";
+            b="ab";
+            c = string.Compare(a, b);
+            Console.WriteLine(c);                  
+            Console.ReadKey();

@@ -1,0 +1,15 @@
+  class myfirstp {
+        public void maxi() {
+           int a, b, c;
+            a = 5; b = 6;
+            c = a + b;
+            Console.WriteLine("this is a method {0}",c);
+        }
+        static void Main(string[] args) {
+            myfirstp my = new myfirstp();
+            my.maxi();
+            // Console.WriteLine(maxi());
+         
+            Console.ReadKey();
+        }
+    }

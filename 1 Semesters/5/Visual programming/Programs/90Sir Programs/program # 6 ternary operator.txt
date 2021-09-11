@@ -1,0 +1,6 @@
+  int a, b;
+            a = 10;
+            b = 5;
+            string result= a>b ? "yes" : "no";
+            Console.WriteLine(result);
+          

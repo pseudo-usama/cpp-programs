@@ -1,0 +1,45 @@
+using System;
+using System.Collections;
+
+namespace ConsoleApplication1
+{
+    class Sample
+    {
+        private int X;
+
+        public Sample()
+        {
+            X = 0;
+        }
+
+        public void Set(int v)
+        {
+            X = v;
+        }
+        public static bool operator <(Sample S1, Sample S2)
+        {
+            return (S1.X < S2.X);
+        }
+
+        public static bool operator >(Sample S1, Sample S2)
+        {
+            return (S1.X > S2.X);
+        }
+
+    }
+
+    class Program
+    {
+        static void Main()
+        {
+            Sample S1 = new Sample();
+            Sample S2 = new Sample();
+
+            S1.Set(5);
+            S2.Set(3);
+
+            Console.WriteLine("" + (S1 < S2));
+            Console.WriteLine("" + (S1 > S2));
+        }
+    }
+}

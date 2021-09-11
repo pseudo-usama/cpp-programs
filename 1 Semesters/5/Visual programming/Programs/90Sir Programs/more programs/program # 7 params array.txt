@@ -1,0 +1,28 @@
+using System;
+namespace myfirstprogram
+{
+    class myfirstp
+    {
+        static int myfun(params int [] arr) {
+
+            int sum;
+            sum = 0;
+
+            foreach (int k in arr) {
+                sum = sum + k;
+            }
+
+            return sum;
+        
+        }
+
+        static void Main(string[] args)
+        {
+
+            int sum = myfun(4,3,2,4,2,4);
+
+            Console.WriteLine("the sum is = {0}", sum);
+            Console.ReadKey();
+        }
+    }
+}

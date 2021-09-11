@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class myclass {
+        public int age;
+        public string myname;
+    public void show(int age, string myname) {
+        this.age = age;
+        this.myname = myname;
+        Console.WriteLine("my name is {0} and and my age {1}", myname, age);
+    }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            myclass obj = new myclass();
+            obj.show(5, "ali");
+            Console.ReadLine();
+        }
+    }
+}

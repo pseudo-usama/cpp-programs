@@ -1,0 +1,39 @@
+using System;
+namespace RectangleArea{
+    class MyCalculation {
+        double a;
+        double h;
+        double l;
+
+        public void get() {
+            Console.WriteLine("Enter the value of height");
+            h = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the value of length");
+            l = Convert.ToInt32(Console.ReadLine());
+
+            // h = 10;
+            //l = 5;
+ 
+        }
+        public double cal() {
+            a = h * l;
+            return a;
+        }
+        public void display() {
+              Console.WriteLine("The length of the : ={0} " , l);
+            Console.WriteLine("The height of the : = {0}", h);
+            Console.WriteLine("The total area is : = {0}", cal());
+        }
+        
+        static void Main(string[] args){
+            MyCalculation c = new MyCalculation();
+            Console.WriteLine("hello world");
+            c.get();
+            c.cal();
+            c.display();
+            Console.ReadKey();
+        }
+    
+    }
+
+}

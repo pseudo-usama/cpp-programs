@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class myclass {
+        public int w;
+        public int h;
+        public int area;
+
+        public void get() {
+            Console.WriteLine("enter width");
+            w=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("enter height");
+            h = Convert.ToInt32(Console.ReadLine());
+        }
+        public int show() {
+            area = w * h;
+        //    Console.WriteLine("the result is ", area);
+            return area;
+        }
+        public static myclass operator +(myclass a, myclass b)
+        {
+            myclass c = new myclass();
+            c.area = a.w + b.w;
+            c.h = a.h + b.h;
+           return c;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            myclass obj1 = new myclass();
+            myclass obj2 = new myclass();
+            myclass sum = new myclass();
+            obj1.get();
+            obj2.get();
+            sum = obj1 + obj2;
+            Console.WriteLine("the result is {0}", sum.area);
+            Console.WriteLine("the result is {0}",sum.show());
+            Console.ReadLine();
+        }
+    }
+}
