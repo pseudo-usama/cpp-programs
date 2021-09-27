@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="style.css">
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZQOTUj0Ri3icM4ko64mu0bFuI_WuVRvY&callback=initMap&libraries=places,geometry"
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=initMap&libraries=places,geometry"
         async defer></script>
 
     <!-- Font Awesome CDN -->
